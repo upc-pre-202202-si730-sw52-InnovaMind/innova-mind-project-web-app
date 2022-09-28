@@ -27,6 +27,8 @@ import Toast from "primevue/toast";
 import Dropdown from "primevue/dropdown";
 import Tag from "primevue/tag";
 import Card from "primevue/card";
+import Password from "primevue/password";
+
 
 const app = createApp(App);
 app.use(router);
@@ -37,6 +39,7 @@ app.use(ToastService);
 
 // PrimeVue Configuration
 app.use(PrimeVue, { ripple: true });
+app.use(createPinia())
 app.component("pv-button", Button)
 app.component("pv-data-table", DataTable);
 app.component("pv-column", Column);
@@ -53,5 +56,7 @@ app.component("pv-toast", Toast);
 app.component("pv-dropdown", Dropdown);
 app.component("pv-tag", Tag);
 app.component("pv-card", Card);
+app.component("pv-password", Password);
+
 
 app.mount("#app");
