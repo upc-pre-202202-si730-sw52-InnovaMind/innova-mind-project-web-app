@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+
+import LoginComponent from "@/login/pages/login.component.vue";
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
+  <login-component/>
+</template>
+<!--
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
@@ -15,11 +16,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
-  </header>
-
-  <RouterView />
-</template>
-
+    -->
 <style scoped>
 header {
   line-height: 1.5;
@@ -39,7 +36,7 @@ nav {
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+
 }
 
 nav a.router-link-exact-active:hover {
@@ -49,7 +46,6 @@ nav a.router-link-exact-active:hover {
 nav a {
   display: inline-block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
 }
 
 nav a:first-of-type {
@@ -60,7 +56,6 @@ nav a:first-of-type {
   header {
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
   }
 
   .logo {
