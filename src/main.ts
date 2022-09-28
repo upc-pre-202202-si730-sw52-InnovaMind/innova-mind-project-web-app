@@ -44,6 +44,7 @@ app.component("pv-toolbar", Toolbar);
 app.component("pv-input-text", InputText);
 app.component("pv-input-number", InputNumber);
 app.component("pv-textarea", Textarea);
+app.component("pv-button", Button);
 app.component("pv-row", Row);
 app.component("pv-sidebar", Sidebar);
 app.component("pv-menu", Menu);
