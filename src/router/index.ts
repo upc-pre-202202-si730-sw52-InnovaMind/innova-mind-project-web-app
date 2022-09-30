@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import AboutView from "@/views/AboutView.vue";
 import LoginComponent from "@/login/pages/login.component.vue";
-import HomeDriver from "@/home/home_driver.vue";
+import HomeDriver from "@/drivers/pages/home_driver.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,7 +24,7 @@ const router = createRouter({
         {
             path: "/home-driver",
             name: "home-driver",
-            component: () => import("@/home/home_driver.vue"),
+            component: () => import("@/drivers/pages/home_driver.vue"),
         },
     ],
 });

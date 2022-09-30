@@ -1,66 +1,79 @@
 {
-    "drivers": [
-        {
-            "first_name": "Jason",
-            "last_name": "Webb",
-            "phone": "986427184",
-            "email": "saliw74248@zfobo.com",
-            "password": "123456789",
-            "license": "A-IIIc",
-            "country": "Peru",
-            "region": "Lima",
-            "id": 1
-        },
-        {
-            "first_name": "Brandon",
-            "last_name": "Webb",
-            "phone": "946786489",
-            "email": "eo4hlg.dp0evxa52@khig.site",
-            "password": "123456789",
-            "license": "A-I",
-            "country": "Chile",
-            "region": "Santiago",
-            "id": 2
-        }
-    ],
-    "companies": [{}],
-    "driver-news": [
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        },
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        },
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        },
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        },
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        },
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        }
-    ],
-    "company-news": {}
+  "drivers": [
+    {
+      "first_name": "Jason",
+      "last_name": "Webb",
+      "phone": "986427184",
+      "email": "saliw74248@zfobo.com",
+      "password": "123456789",
+      "license": "A-IIIc",
+      "country": "Peru",
+      "region": "Lima",
+      "id": 1
+    },
+    {
+      "first_name": "Brandon",
+      "last_name": "Webb",
+      "phone": "946786489",
+      "email": "eo4hlg.dp0evxa52@khig.site",
+      "password": "123456789",
+      "license": "A-I",
+      "country": "Chile",
+      "region": "Santiago",
+      "id": 2
+    },
+    {
+      "first_name": "Thorn",
+      "last_name": "Ambrozik",
+      "phone": "926922875",
+      "email": "bmacinherney1@dedecms.com",
+      "password": "123456789",
+      "license": "A-IIa",
+      "country": "Peru",
+      "region": "Lima",
+      "id": 3
+    }
+  ],
+  "companies": [
+    {}
+  ],
+  "driver-news": [
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    }
+  ],
+  "company-news": {}
 }

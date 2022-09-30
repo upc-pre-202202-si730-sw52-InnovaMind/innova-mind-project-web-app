@@ -57,8 +57,8 @@
 
 <script lang="ts">
 import "primeicons/primeicons.css";
-import Sidebar from "./../components/Sidebar.vue";
-import { DriversServices } from "../drivers/services/drivers-api.services";
+import Sidebar from "../components/Sidebar.vue";
+import { DriversServices } from "../services/drivers-api.services";
 
 export default {
     components: {
