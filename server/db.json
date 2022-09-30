@@ -1,0 +1,31 @@
+{
+  "drivers": [
+    {
+      "first_name": "Jason",
+      "last_name": "Webb",
+      "phone": "986427184",
+      "email": "saliw74248@zfobo.com",
+      "password": "123456789",
+      "license": "A-IIIc",
+      "country": "Peru",
+      "region": "Lima",
+      "id": 1
+    },
+    {
+      "first_name": "Brandon",
+      "last_name": "Webb",
+      "phone": "946786489",
+      "email": "eo4hlg.dp0evxa52@khig.site",
+      "password": "123456789",
+      "license": "A-I",
+      "country": "Chile",
+      "region": "Santiago",
+      "id": 2
+    }
+  ],
+  "companies": [
+    {}
+  ],
+  "driver-news":{},
+  "company-news":{}
+}
