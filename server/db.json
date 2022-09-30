@@ -23,6 +23,7 @@
       "id": 2
     },
     {
+<<<<<<< HEAD
       "first_name": "Thorn",
       "last_name": "Ambrozik",
       "phone": "926922875",
@@ -32,10 +33,115 @@
       "country": "Peru",
       "region": "Lima",
       "id": 3
+=======
+      "first_name": "edfggfd",
+      "last_name": "fdgdfdfg",
+      "phone": "dgfdfg",
+      "email": "dg",
+      "password": "dfgd",
+      "license": "A-IIa",
+      "country": "gdgdfg",
+      "region": "dfgdfg",
+      "id": 3
+    },
+    {
+      "first_name": "edfggfd",
+      "last_name": "fdgdfdfg",
+      "phone": "dgfdfg",
+      "email": "dg",
+      "password": "dfgd",
+      "license": "A-IIa",
+      "country": "gdgdfg",
+      "region": "dfgdfg",
+      "id": 4
+>>>>>>> origin/feature/register-company
     }
   ],
   "companies": [
-    {}
+    {
+      "ruc": "15345345",
+      "id": 1,
+      "first_name": "adad",
+      "last_name": "asdasd",
+      "phone": "345345",
+      "email": "asdas",
+      "password": "dasd",
+      "name": "fssfd",
+      "region": "vcxbcvx",
+      "city": "vxxcvx",
+      "state": "xcvxcv",
+      "address": "xvcxvxcv"
+    },
+    {
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 2
+    },
+    {
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 3
+    },
+    {
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 4
+    },
+    {
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 5
+    },
+    {
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 6
+    }
   ],
   "driver-news": [
     {
@@ -75,5 +181,47 @@
       "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
     }
   ],
+<<<<<<< HEAD
+  "driver-news": [
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    }
+  ],
+=======
+  "driver-news": {},
+>>>>>>> origin/feature/register-company
   "company-news": {}
 }
