@@ -1,6 +1,7 @@
 import axios from "axios";
 export class DriversServices {
     BaseURL = "http://localhost:3000/drivers";
+    NewsURL = "http://localhost:3000/driver-news";
 
     GetAll() {
         return axios.get(this.BaseURL);
@@ -13,5 +14,8 @@ export class DriversServices {
     }
     Delete(id) {
         return axios.delete(`${this.BaseURL}/${id}`);
+    }
+    GetDriversNews() {
+        return axios.get(this.NewsURL);
     }
 }

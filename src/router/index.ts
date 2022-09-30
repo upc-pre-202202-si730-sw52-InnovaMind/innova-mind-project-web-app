@@ -9,7 +9,7 @@ const router = createRouter({
         {
             path: "/",
             name: "home",
-            component: HomeDriver,
+            component: LoginComponent,
         },
         {
             path: "/register",
@@ -19,8 +19,12 @@ const router = createRouter({
         {
             path: "/about",
             name: "about",
-            component: () =>
-                import("@/views/AboutView.vue"),
+            component: () => import("@/views/AboutView.vue"),
+        },
+        {
+            path: "/home-driver",
+            name: "home-driver",
+            component: () => import("@/home/home_driver.vue"),
         },
     ],
 });

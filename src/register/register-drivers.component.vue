@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-content-center bg-cyan-500">
-        <form class="w-8 register-drivers  mb-3">
+        <form class="w-8 register-drivers mb-3">
             <div class="mb-4 field col-12">
                 <h1>Get Started With InnovaMind</h1>
                 <h5 class="text-50">Please, tell us about you</h5>
@@ -93,10 +93,9 @@ export default {
             this.service.Add(this.driver).then((response) => {
                 this.drivers.push(this.driver);
             });
+            this.$router.push("/home-driver");
         },
-        Test() {
-            console.log(typeof this.driver.license);
-        },
+        Test() {},
     },
 };
 </script>
