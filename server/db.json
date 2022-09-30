@@ -23,7 +23,6 @@
       "id": 2
     },
     {
-<<<<<<< HEAD
       "first_name": "Thorn",
       "last_name": "Ambrozik",
       "phone": "926922875",
@@ -32,16 +31,6 @@
       "license": "A-IIa",
       "country": "Peru",
       "region": "Lima",
-      "id": 3
-=======
-      "first_name": "edfggfd",
-      "last_name": "fdgdfdfg",
-      "phone": "dgfdfg",
-      "email": "dg",
-      "password": "dfgd",
-      "license": "A-IIa",
-      "country": "gdgdfg",
-      "region": "dfgdfg",
       "id": 3
     },
     {
@@ -54,7 +43,6 @@
       "country": "gdgdfg",
       "region": "dfgdfg",
       "id": 4
->>>>>>> origin/feature/register-company
     }
   ],
   "companies": [
@@ -181,7 +169,6 @@
       "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
     }
   ],
-<<<<<<< HEAD
   "driver-news": [
     {
       "author": "Henry Turrones",
@@ -220,8 +207,5 @@
       "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
     }
   ],
-=======
-  "driver-news": {},
->>>>>>> origin/feature/register-company
   "company-news": {}
 }
