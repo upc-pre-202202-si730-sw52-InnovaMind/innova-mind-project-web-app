@@ -207,5 +207,18 @@
       "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
     }
   ],
-  "company-news": {}
+  "company-news": [
+    {
+      "author": "Ministerio de transportes y comunicaciones",
+      "photo": "https://larepublica.pe/resizer/aQWTniujXjtYelH7dKf0LXBbjgs=/538x0/top/larepublica.pe/resizer/ZxqT-YOmErnSkIrhOGb2dHHKYb0=/538x0/top/smart/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/SHTRLBFOWFG23IA534TY7NADQ4.png",
+      "title": "News rules for transport",
+      "description": "Today the Ministry of Transport have approved the news rules for the transport business."
+    },
+    {
+      "author": "Andina",
+      "photo": "https://portal.andina.pe/EDPfotografia3/Thumbnail/2022/09/30/000902157W.jpg",
+      "title": "Construction begins on the Huactahuaru tunnel that will join the Ancash and Huánuco regions",
+      "description": "Provías Nacional began construction of the Huactahuaru tunnel, which is located at kilometer 144 of section III of the Huánuco-La Unión-Huallanca highway, which will join the regions of Huánuco and Áncash, reported the Ministry of Transport and Communications (MTC)."
+    }
+  ]
 }

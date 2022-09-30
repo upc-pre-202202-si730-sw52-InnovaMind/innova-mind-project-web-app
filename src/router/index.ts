@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import HomeCompany from "@/companies/pages/home_company.vue";
 import AboutView from "@/views/AboutView.vue";
 import LoginComponent from "@/login/pages/login.component.vue";
 import HomeDriver from "@/drivers/pages/home_driver.vue";
@@ -25,6 +26,11 @@ const router = createRouter({
             path: "/home-driver",
             name: "home-driver",
             component: () => import("@/drivers/pages/home_driver.vue"),
+        },
+        {
+            path: "/home-company",
+            name: "home-company",
+            component: () => import("@/companies/pages/home_company.vue"),
         },
     ],
 });
