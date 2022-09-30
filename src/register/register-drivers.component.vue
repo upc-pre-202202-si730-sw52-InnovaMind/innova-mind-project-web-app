@@ -1,5 +1,6 @@
 <template>
     <div class="flex justify-content-center bg-cyan-500">
+
         <form class="w-8 register-drivers  mb-3">
             <div class="mb-4 field col-12">
                 <h1>Get Started With InnovaMind</h1>
@@ -97,6 +98,7 @@ export default {
         Test() {
             console.log(typeof this.driver.license);
         },
+
     },
 };
 </script>

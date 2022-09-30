@@ -1,5 +1,6 @@
 <template>
   <div class="login">
+    <pv-button class="p-button-link" label="Back" icon="pi pi-arrow-left" @click="landindPage()"/>
     <table>
       <tr>
         <th>
@@ -54,7 +55,8 @@ export default {
       users: {
         email: '',
         password: ''
-      }
+      },
+
     }
   },
   methods: {
@@ -65,8 +67,11 @@ export default {
         return false;
       }
     },
+    landindPage() {
+      window.location.href = `https://upc-pre-202202-si730-sw52-innovamind.github.io/`;
+    }
+  },
 
-  }
 }
 </script>
 
