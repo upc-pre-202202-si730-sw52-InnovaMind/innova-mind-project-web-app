@@ -46,7 +46,7 @@
         <h5>Henry Turrones</h5>
         <div class="profile-image">
           <img
-              src="src/assets/images/henryturrones.png"
+              src="src/assets/images/HenryTurrones.jpg"
               alt=""
           />
         </div>
