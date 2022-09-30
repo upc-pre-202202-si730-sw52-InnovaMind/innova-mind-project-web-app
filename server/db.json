@@ -21,11 +21,116 @@
       "country": "Chile",
       "region": "Santiago",
       "id": 2
+    },
+    {
+      "first_name": "edfggfd",
+      "last_name": "fdgdfdfg",
+      "phone": "dgfdfg",
+      "email": "dg",
+      "password": "dfgd",
+      "license": "A-IIa",
+      "country": "gdgdfg",
+      "region": "dfgdfg",
+      "id": 3
+    },
+    {
+      "first_name": "edfggfd",
+      "last_name": "fdgdfdfg",
+      "phone": "dgfdfg",
+      "email": "dg",
+      "password": "dfgd",
+      "license": "A-IIa",
+      "country": "gdgdfg",
+      "region": "dfgdfg",
+      "id": 4
     }
   ],
   "companies": [
-    {}
+    {
+      "ruc": "15345345",
+      "id": 1,
+      "first_name": "adad",
+      "last_name": "asdasd",
+      "phone": "345345",
+      "email": "asdas",
+      "password": "dasd",
+      "name": "fssfd",
+      "region": "vcxbcvx",
+      "city": "vxxcvx",
+      "state": "xcvxcv",
+      "address": "xvcxvxcv"
+    },
+    {
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 2
+    },
+    {
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 3
+    },
+    {
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 4
+    },
+    {
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 5
+    },
+    {
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 6
+    }
   ],
-  "driver-news":{},
-  "company-news":{}
+  "driver-news": {},
+  "company-news": {}
 }

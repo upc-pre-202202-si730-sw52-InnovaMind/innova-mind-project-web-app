@@ -9,14 +9,19 @@
         <div v-show="user.type === 'driver'">
             <RegisterDriver/>
         </div>
+        <div v-show="user.type === 'company'">
+            <RegisterCompany/>
+        </div>
     </div>
 </template>
 
 <script>
 import RegisterDriver from "@/register/register-drivers.component.vue";
+import RegisterCompany from "@/register/register-companies.component.vue";
 export default {
     components: {
-        RegisterDriver
+        RegisterDriver,
+        RegisterCompany
     },
     data() {
         return {
