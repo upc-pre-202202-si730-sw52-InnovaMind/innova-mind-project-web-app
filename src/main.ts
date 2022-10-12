@@ -27,8 +27,9 @@ import Dropdown from "primevue/dropdown";
 import Tag from "primevue/tag";
 import Card from "primevue/card";
 import Password from "primevue/password";
-
-
+import ScrollPanel from 'primevue/scrollpanel';
+import Avatar from 'primevue/avatar';
+import Badge from 'primevue/badge';
 
 const app = createApp(App);
 app.use(router);
@@ -56,5 +57,9 @@ app.component("pv-dropdown", Dropdown);
 app.component("pv-tag", Tag);
 app.component("pv-card", Card);
 app.component("pv-password", Password);
+app.component("pv-scroll-panel", ScrollPanel);
+app.component("pv-avatar", Avatar);
+app.component("pv-badge", Badge);
+
 
 app.mount("#app");

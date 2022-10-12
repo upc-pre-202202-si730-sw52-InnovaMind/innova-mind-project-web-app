@@ -23,6 +23,23 @@ const router = createRouter({
             component: () => import("@/views/AboutView.vue"),
         },
         {
+            path: "/driver",
+            name: "driver",
+            component: () => import("@/views/DriverView.vue"),
+            children:[
+                {
+                    path: "home",
+                    name: "home",
+                    component: () => import("@/drivers/pages/home_driver.vue"),
+                },
+                {
+                    path: "messages",
+                    name: "messages",
+                    component: () => import("@/drivers/pages/messages_driver.vue"),
+                }
+            ],
+        },
+        {
             path: "/home-driver",
             name: "home-driver",
             component: () => import("@/drivers/pages/home_driver.vue"),

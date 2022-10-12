@@ -1,4 +1,93 @@
 {
+  "messages": [
+    {
+      "id": 1,
+      "type": "comp",
+      "message": "Hello, I want you work in my company"
+    },
+    {
+      "id": 2,
+      "type": "dev",
+      "message": "I want a new job. So I'm in"
+    },
+    {
+      "id": 3,
+      "type": "comp",
+      "message": "Perfect. Have a great day"
+    },
+    {
+      "id": 4,
+      "type": "dev",
+      "message": "Thanks for the job"
+    },
+    {
+      "id": 5,
+      "type": "dev",
+      "message": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum."
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "full_name": "Elset MacNess",
+      "company": "Photojam",
+      "last_message": "I'll waiting for your answer"
+    },
+    {
+      "id": 2,
+      "full_name": "Anthony Tesmond",
+      "company": "Yodel",
+      "last_message": "I'll waiting for your answer"
+    },
+    {
+      "id": 3,
+      "full_name": "Filbert Doldon",
+      "company": "Yabox",
+      "last_message": "I'll waiting for your answer"
+    },
+    {
+      "id": 4,
+      "full_name": "Marlane Garnall",
+      "company": "Photobug",
+      "last_message": "I'll waiting for your answer"
+    },
+    {
+      "id": 5,
+      "full_name": "Nap McOwen",
+      "company": "Wordware",
+      "last_message": "I'll waiting for your answer"
+    },
+    {
+      "id": 6,
+      "full_name": "Patrizius Jamot",
+      "company": "Leexo",
+      "last_message": "I'll waiting for your answer"
+    },
+    {
+      "id": 7,
+      "full_name": "Warden Calltone",
+      "company": "Agivu",
+      "last_message": "I'll waiting for your answer"
+    },
+    {
+      "id": 8,
+      "full_name": "Javier Challen",
+      "company": "Meemm",
+      "last_message": "I'll waiting for your answer"
+    },
+    {
+      "id": 9,
+      "full_name": "Adams Devote",
+      "company": "Photospace",
+      "last_message": "I'll waiting for your answer"
+    },
+    {
+      "id": 10,
+      "full_name": "Aurthur Sinderson",
+      "company": "Topiclounge",
+      "last_message": "I'll waiting for your answer"
+    }
+  ],
   "drivers": [
     {
       "first_name": "Jason",
@@ -129,44 +218,6 @@
       "state": "Callao",
       "address": "Callao ",
       "id": 6
-    }
-  ],
-  "driver-news": [
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-    },
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-    },
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-    },
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-    },
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-    },
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
     }
   ],
   "driver-news": [
