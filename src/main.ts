@@ -27,6 +27,7 @@ import Dropdown from "primevue/dropdown";
 import Tag from "primevue/tag";
 import Card from "primevue/card";
 import Password from "primevue/password";
+import DropDown from "primevue/dropdown";
 
 
 
@@ -56,5 +57,6 @@ app.component("pv-dropdown", Dropdown);
 app.component("pv-tag", Tag);
 app.component("pv-card", Card);
 app.component("pv-password", Password);
+app.component("pv-dropdown", DropDown);
 
 app.mount("#app");

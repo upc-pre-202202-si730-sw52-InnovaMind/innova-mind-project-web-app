@@ -4,6 +4,8 @@ import AboutView from "@/views/AboutView.vue";
 import LoginComponent from "@/login/pages/login.component.vue";
 import HomeDriver from "@/drivers/pages/home_driver.vue";
 
+
+
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
@@ -32,6 +34,11 @@ const router = createRouter({
             name: "home-company",
             component: () => import("@/companies/pages/home_company.vue"),
         },
+        {
+            path: "/apply-for-job",
+            name: "apply-for-job",
+            component: () => import("@/drivers/pages/apply_for_job.vue"),
+        }
     ],
 });
 export default router;

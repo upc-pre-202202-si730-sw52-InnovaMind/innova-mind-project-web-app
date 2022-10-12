@@ -12,8 +12,16 @@
             <li>
                 <div>
                     <i class="pi pi-home"></i>
-                    <p>Home</p>
+                    <router-link to="/home-driver">Home</router-link>
+                    <!--p>Home</p-->
                 </div>
+            </li>
+            <li>
+              <div>
+                <i class="pi pi-search"></i>
+                <router-link to="/apply-for-job">Apply for job</router-link>
+                <!--p>Apply for job</p-->
+              </div>
             </li>
             <li>
                 <div>
