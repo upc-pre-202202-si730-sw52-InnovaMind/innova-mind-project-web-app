@@ -3,6 +3,9 @@
     <Sidebar />
 
     <div class="main-forms">
+      <pv-card id="top-bar">
+        <template #title >Please specify the items</template>
+      </pv-card>
 
       <pv-dropdown v-model="selectedCompany" :options="companies"
                    optionLabel="name" placeholder="Company for Apply" class="field" id="first-field"/>
@@ -15,26 +18,17 @@
       <pv-dropdown v-model="selectedLicense" :options="licenses"
                    optionLabel="name" placeholder="License category" class="field"/>
       <pv-button id="submit" v-on:click="getCompanies"   label="Apply"/>
-      <pv-card v-for="(company, i) in companies" :key="i" :company="company" class="card">
-        <template #header>
-          <h1>{{company.first_name}}</h1>
-        </template>
-        <template #content>
-          <p>{{company.first_name}}</p>
-        </template>
-      </pv-card>
 
     </div>
     <div class="left-bar">
-      <div class="results">
-        <h3>Results</h3>
-        <div class="profile-image">
-          <img
-            src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg"
-            alt=""
-          />
-        </div>
-      </div>
+      <pv-card id="top-results">
+        <template #title>Results</template>
+      </pv-card>
+      <pv-card v-for="(company, i) in companies" :key="i" :company="company" class="card" id="results">
+        <template #content >
+          <p>{{company.first_name}} {{company.last_name}}</p>
+        </template>
+      </pv-card>
     </div>
   </div>
 </template>
@@ -142,14 +136,12 @@ export default {
 <style scoped>
 .apply-for-job {
   display: flex;
-  flex: 100%;
   flex-direction: row;
   background-color: #f5f5f5;
 }
 .left-bar {
   display: flex;
   flex-direction: column;
-  align-self: flex-end;
 
 }
 .profile-image img{
@@ -158,6 +150,8 @@ export default {
 .main-forms {
   display: flex;
   flex-direction: column;
+  margin-left: 2%;
+  margin-right: 30%;
 }
 .field {
   width: 15rem;
@@ -170,8 +164,36 @@ export default {
   border-style: none;
 
 }
+.card {
+  width: 18rem;
+  margin: 0.5rem;
+  height: 5rem;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+
+}
+#top-results {
+  height: 4rem;
+  margin-bottom: 3rem;
+}
+#results {
+  height: 4rem;
+  align-content: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+#top-bar {
+  background: #D4D7DD;
+  color: #79819A;
+  height: 3.5rem;
+  border-radius: 12px;
+  width: 190%;
+  text-align: center;
+}
 #first-field {
   margin-top: 6rem;
+  padding: 0;
 }
 #submit {
   margin-left: 9rem;
