@@ -66,7 +66,11 @@ export default {
     },
     data() {
         return {
-            news: [],
+            news: [
+              { "photo": ""},
+              { "title": ""},
+              { "author": ""}
+            ],
         };
     },
     created() {

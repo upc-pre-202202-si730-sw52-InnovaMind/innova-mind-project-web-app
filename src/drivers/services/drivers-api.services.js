@@ -1,7 +1,7 @@
 import axios from "axios";
 export class DriversServices {
-    BaseURL = "http://localhost:3000/drivers";
-    NewsURL = "http://localhost:3000/driver-news";
+    BaseURL = "https://my-json-server.typicode.com/AbelCierto/innova-mind-json-server/drivers";
+    NewsURL = "https://my-json-server.typicode.com/AbelCierto/innova-mind-json-server/driver-news";
 
     GetAll() {
         return axios.get(this.BaseURL);

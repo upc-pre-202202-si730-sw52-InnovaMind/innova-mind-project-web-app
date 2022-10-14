@@ -1,7 +1,7 @@
 import axios from "axios";
 export class CompaniesServices {
-    BaseURL = "http://localhost:3000/companies";
-    NewsURL = "http://localhost:3000/company-news";
+    BaseURL = "https://my-json-server.typicode.com/AbelCierto/innova-mind-json-server/companies";
+    NewsURL = "https://my-json-server.typicode.com/AbelCierto/innova-mind-json-server/company-news";
 
     GetAll() {
         return axios.get(this.BaseURL);
