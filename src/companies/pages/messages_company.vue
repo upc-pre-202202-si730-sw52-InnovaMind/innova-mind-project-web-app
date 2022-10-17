@@ -133,7 +133,7 @@ export default {
         SendMessage() {
             let TempAnswer= {
                 "id":0,
-                "type": "dev",
+                "type": "comp",
                 "message": this.response
             }
 
