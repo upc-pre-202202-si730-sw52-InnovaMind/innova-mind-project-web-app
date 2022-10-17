@@ -30,17 +30,17 @@
                     <pv-avatar label="H" class="mr-2" size="xlarge" shape="circle"/>
                 </div>
                 <div>
-                    <p class="text-3xl">Henry Turrones</p>
-                    <p class="text-base">Maconsa Group recluter</p>
+                    <p class="text-3xl">Guillermo Diaz</p>
+                    <p class="text-base">Driver with AIII license</p>
                 </div>
             </div>
             
             <pv-scroll-panel class="conversation">
             <div v-for="(message, i) in messages" :key="i">
-                <div v-if="message.type === 'comp'" class="bubble1 text-left bg-white border-round-xl w-6 p-1 m-1">
+                <div v-if="message.type === 'dev'" class="bubble1 text-left bg-white border-round-xl w-6 p-1 m-1">
                     <p>{{message.message}}</p>
                 </div>
-                <div v-if="message.type === 'dev'" class="bubble2 text-left bg-white border-round-xl w-6 ml-auto p-1 m-1">
+                <div v-if="message.type === 'comp'" class="bubble2 text-left bg-white border-round-xl w-6 ml-auto p-1 m-1">
                     <p>{{message.message}}</p>
                 </div>
             </div>
@@ -57,8 +57,8 @@
             <div class="header">
                 <pv-avatar label="H" class="mr-2" size="xlarge" shape="circle"/>
                 <div class="">
-                    <p class="text-3xl">Henry Turrones</p>
-                    <p class="text-base">Maconsa Group recluter</p>
+                    <p class="text-3xl">Guillermo Diaz</p>
+                    <p class="text-base">Driver with AIII license</p>
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import { DriversServices } from "../services/drivers-api.services";
+import { CompaniesServices } from "../services/companies-api.services";
 import useBreakpoints from "vue-next-breakpoints";
 
 export default {
@@ -106,7 +106,7 @@ export default {
         };
     },
     created() {
-        this.service = new DriversServices();
+        this.service = new CompaniesServices();
         this.service.GetContacts().then(response => {
             this.items = response.data;
         });
@@ -149,11 +149,10 @@ export default {
 
 <style scope>
 .messages {
-    /* width: calc(100vw - 600px); */
+
 }
 
 .inbox {
-    /* height: calc(100vh - 30px); */
     width: 100%;
 }
 
@@ -170,7 +169,6 @@ export default {
 }
 
 .chat{
-    /* width: 75%; */
 }
 
 .header{

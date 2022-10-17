@@ -12,7 +12,7 @@
                 <div class="profile-image">
                     <img
                         src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg"
-                        alt=""
+                        alt="Driver's profile photo"
                     />
                 </div>
             </div>

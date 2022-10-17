@@ -2,8 +2,8 @@ import axios from "axios";
 export class DriversServices {
     BaseURL = "http://localhost:3000/drivers";
     NewsURL = "http://localhost:3000/driver-news";
-    ContactsURL = "http://localhost:3000/contacts"
-    MessagesURL = "http://localhost:3000/messages"
+    ContactsURL = "http://localhost:3000/contacts";
+    MessagesURL = "http://localhost:3000/messages";
 
     GetAll() {
         return axios.get(this.BaseURL);

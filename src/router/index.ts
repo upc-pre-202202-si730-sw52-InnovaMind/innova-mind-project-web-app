@@ -9,7 +9,7 @@ const router = createRouter({
     routes: [
         {
             path: "/",
-            name: "home",
+            alias: "/home",            
             component: LoginComponent,
         },
         {
@@ -22,6 +22,7 @@ const router = createRouter({
             name: "about",
             component: () => import("@/views/AboutView.vue"),
         },
+        /* Drivers routing */
         {
             path: "/driver",
             name: "driver",
@@ -36,6 +37,24 @@ const router = createRouter({
                     path: "messages",
                     name: "messages",
                     component: () => import("@/drivers/pages/messages_driver.vue"),
+                }
+            ],
+        },
+        /* Companies routing */
+        {
+            path: "/company",
+            name: "company",
+            component: () => import("@/views/CompanyView.vue"),
+            children:[
+                {
+                    path: "home",
+                    name: "home",
+                    component: () => import("@/companies/pages/home_company.vue"),
+                },
+                {
+                    path: "messages",
+                    name: "messages",
+                    component: () => import("@/companies/pages/messages_company.vue"),
                 }
             ],
         },

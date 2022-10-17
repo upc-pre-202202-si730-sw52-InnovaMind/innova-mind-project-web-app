@@ -35,7 +35,6 @@ const app = createApp(App);
 app.use(router);
 
 // Toast Service
-
 app.use(ToastService);
 
 // PrimeVue Configuration
@@ -60,6 +59,5 @@ app.component("pv-password", Password);
 app.component("pv-scroll-panel", ScrollPanel);
 app.component("pv-avatar", Avatar);
 app.component("pv-badge", Badge);
-
 
 app.mount("#app");
