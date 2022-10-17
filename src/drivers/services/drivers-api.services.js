@@ -18,4 +18,7 @@ export class DriversServices {
     GetDriversNews() {
         return axios.get(this.NewsURL);
     }
+    Getdriver(id) {
+        return axios.get(`${this.BaseURL}/${id}`);
+    }
 }

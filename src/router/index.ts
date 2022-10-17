@@ -3,6 +3,7 @@ import HomeCompany from "@/companies/pages/home_company.vue";
 import AboutView from "@/views/AboutView.vue";
 import LoginComponent from "@/login/pages/login.component.vue";
 import HomeDriver from "@/drivers/pages/home_driver.vue";
+import Perfil from "@/drivers/pages/perfil.vue"
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,6 +32,11 @@ const router = createRouter({
             path: "/home-company",
             name: "home-company",
             component: () => import("@/companies/pages/home_company.vue"),
+        },
+        {
+            path: "/perfil-driver",
+            name: "perfil-driver",
+            component: () => import("@/drivers/pages/perfil.vue"),
         },
     ],
 });
