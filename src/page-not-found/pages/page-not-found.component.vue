@@ -7,7 +7,6 @@
         <p class="mt-0 mb-4 text-700 line-height-3">You have to options, in the button about us you will see a landing page with our information. In the button go back you will return in the section login</p>
 
         <pv-button label="Go Back" type="button" icon="pi pi-arrow-left" class="mr-3 p-button-raised" @click="goBack"></pv-button>
-        <pv-button label="About US" type="button" class="p-button-outlined" @click="landingPage"></pv-button>
       </section>
     </div>
     <div class="container col-12 md:col-6 overflow-hidden">
@@ -21,9 +20,6 @@
 export default {
   name: "PageNotFound",
   methods: {
-    landingPage() {
-      window.location.href = `https://upc-pre-202202-si730-sw52-innovamind.github.io/`;
-    },
     goBack() {
       window.location.href = `/`;
     }
