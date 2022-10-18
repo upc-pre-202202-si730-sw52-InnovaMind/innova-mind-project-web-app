@@ -131,7 +131,18 @@
       "id": 10
     },
     {
-      "id": 11
+      "ruc": "",
+      "id": 11,
+      "first_name": "",
+      "last_name": "",
+      "phone": "",
+      "email": "",
+      "password": "",
+      "name": "",
+      "region": "",
+      "city": "",
+      "state": "",
+      "address": ""
     }
   ],
   "users": [
@@ -193,6 +204,12 @@
       "id": 10,
       "email": "ronalsanchez0192@gmail.com",
       "password": "admin123",
+      "role": "company"
+    },
+    {
+      "id": 11,
+      "email": "",
+      "password": "",
       "role": "company"
     }
   ],

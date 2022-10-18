@@ -13,6 +13,9 @@ export class CompaniesServices {
     AddUser(user) {
         return axios.post(this.UsersURL, user);
     }
+    GetUsers() {
+        return axios.get(this.UsersURL);
+    }
     GetUserByEmail(email) {
         return axios.get(this.UsersURL+`?email=${email}`)
     }

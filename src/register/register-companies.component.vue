@@ -73,35 +73,95 @@
                 <pv-button
                     label="Register"
                     class="p-button-rounded w-10rem"
-                    @click="Add()"
+                    @click="SubmitForm()"
                 />
             </div>
         </form>
     </div>
+  <div>
+    <Dialog :show="showDialog"  :cancel="cancel" title="This email has been registered" description="Please enter another email to created your account" />
+  </div>
 </template>
 
 <script>
-import { CompaniesServices } from "../companies/services/companies-api.services";
+import { CompaniesServices } from "@/companies/services/companies-api.services.js";
+import Dialog  from "@/login/pages/Dialog.vue";
 
 export default {
+  props: ['show', 'description', 'title', 'close'],
+  components: {
+    Dialog
+  },
     data() {
         return {
-            companies: [],
-            company: {},
-            pass: "",
+          users: [],
+          account: {
+            id: '',
+            email: '',
+            password: '',
+            role: '',
+          },
+          company: {
+            ruc: '',
+            id: '',
+            first_name: '',
+            last_name: '',
+            phone: '',
+            email: '',
+            password: '',
+            name: '',
+            region: '',
+            city: '',
+            state: '',
+            address: ''
+          },
+          pass: "",
+          showDialog: false,
+          registered: false,
         };
     },
     created() {
         this.service = new CompaniesServices();
+        this.service.GetUsers().then((res) => {
+          this.users = res.data;
+        });
     },
     methods: {
-        Add() {
-            this.company.id = 0;
-            this.service.Add(this.company).then((response) => {
-                this.company.push(this.company);
-            });
-            this.$router.push("/home-company");
-        },
+      cancel() {
+        this.showDialog = false;
+      },
+      Add() {
+        this.company.id = this.account.id;
+        this.service.Add(this.company).then((response) => {
+          this.company.push(this.company);
+        });
+        this.$router.push('/home-company/'+this.company.id);
+      },
+      AddUser() {
+        this.account.id = 0;
+        this.account.email = this.company.email;
+        this.account.password = this.company.password;
+        this.account.role = 'company';
+        this.service.AddUser(this.account).then((response) => {
+          this.account.push(this.account);
+        });
+      },
+      verifyEmail() {
+        for (let i = 0; i < this.users.length; i++) {
+          if (this.users[i].email === this.company.email) {
+            this.registered = true;
+            this.showDialog = true;
+            break;
+          }
+        }
+      },
+      SubmitForm() {
+        this.verifyEmail();
+        if(!this.registered){
+          this.AddUser();
+          this.Add();
+        }
+      },
     },
 };
 </script>
