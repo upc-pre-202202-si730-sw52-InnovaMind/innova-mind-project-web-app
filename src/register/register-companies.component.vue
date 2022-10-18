@@ -92,7 +92,7 @@
     </div>
   <div>
     <Dialog :show="showDialog"  :cancel="cancel" title="This email has been registered" description="Please enter another email to created your account" />
-    <Dialog :show="showError"  :cancel="cancelError" title="Please fill in the field" description="Please fill in all the fields required" />
+    <Dialog :show="showError"  :cancel="cancelError" title="Please fill in the fields required" description="Please fill in all the fields required" />
   </div>
 </template>
 
@@ -238,6 +238,9 @@ export default {
           this.registered = true;
           this.showDialog = true;
           break;
+        }
+        else {
+          this.registered = false;
         }
       }
     },

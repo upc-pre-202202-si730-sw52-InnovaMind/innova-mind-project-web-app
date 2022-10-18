@@ -13,9 +13,10 @@ export class DriversServices {
     AddUser(user) {
         return axios.post(this.UsersURL, user);
     }
-    GetUserByEmail(email) {
-        return axios.get(this.UsersURL+`?email=${email}`)
+    GetUsers() {
+        return axios.get(this.UsersURL);
     }
+
     Modify(id, driver) {
         return axios.put(`${this.BaseURL}/${id}`, driver);
     }
