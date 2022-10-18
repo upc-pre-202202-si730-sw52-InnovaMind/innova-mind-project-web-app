@@ -9,14 +9,14 @@
     <pv-card class="card">
       <template #content>
         <span class="p-float-label">
-          <pv-input-text class="p-input" v-model="users.email" type="text" placeholder="Email"/>
+          <pv-input-text class="p-input" v-model="users.email" type="text" placeholder="Email" :disabled="flag"/>
           <span v-if="!users.email" class="p-error">Email is required.</span>
         </span>
         <span class="p-float-label">
-          <pv-input-text class="p-input" v-model="users.password" type="password" placeholder="Password"/>
+          <pv-input-text class="p-input" v-model="users.password" type="password" placeholder="Password" :disabled="flag"/>
           <span v-if="!users.password" class="p-error">Password is required.</span>
         </span>
-        <pv-button class="p-button-raised button"  icon="mr-2 mb-2" label="Log In" @click="submitForm()"></pv-button>
+        <pv-button @click="submitForm" class="p-button-raised button"  icon="mr-2 mb-2" label="Log In" :isabled="flag"></pv-button>
         <router-link id="router" to="/forgot-password" class="p-button-label">Forgot password?</router-link>
         <router-link id="router"  to="/register" class="p-button-label">Create account</router-link>
       </template>
@@ -25,17 +25,27 @@
       <pv-tag class="p-tag" >© 2022 Innovate Mind.All your privacy is sure!</pv-tag>
     </div>
   </div>
+
+  <div>
+    <Dialog :show="showDialog"  :cancel="cancel" title="Invalid credentials" description="Please enter a correct email and password" />
+    <Dialog :show="ShowErrorEmail" :cancel="closeErrorEmail" title="Enter a Email" description="Please enter a correct email" />
+    <Dialog :show="showErrorPassword" :cancel="closeErrorPassword" title="Enter a Password" description="Please enter a correct password" />
+  </div>
 </template>
 
 <script>
 import useValidate from '@vuelidate/core'
 import { required, email,  maxLength, minLength} from '@vuelidate/validators'
 import {computed, reactive} from "vue";
+import Dialog  from "@/login/pages/Dialog.vue";
+
 export default {
   name: "LoginComponent",
+  props: ['show', 'description', 'title', 'close'],
   components: {
     // register components here
     // forgot-password component here
+    Dialog
   },
   setup() {
     const state = reactive({
@@ -75,6 +85,10 @@ export default {
         email: '',
         password: '',
       },
+      showDialog: false,
+      ShowErrorEmail: false,
+      showErrorPassword: false,
+      flag: false,
     }
   },
 
@@ -83,12 +97,34 @@ export default {
       window.location.href = `https://upc-pre-202202-si730-sw52-innovamind.github.io/`;
     },
     submitForm() {
-      this.v$.$validate();
-      if(!this.v$.$error()) {
-        alert('Form is valid')
-      } else {
-        alert('Form is invalid')
+
+      if(this.users.email === '' && this.users.password === '') {
+        this.showDialog = true;
+        this.flag = true;
       }
+      else if(this.users.email !== '' && this.users.password === '') {
+        this.showErrorPassword = true;
+        this.flag = true;
+      }
+      else if(this.users.password !== '' && this.users.email === '') {
+        this.ShowErrorEmail = true;
+        this.flag = true;
+      }
+    },
+    cancel() {
+      console.log('cancel');
+      this.showDialog = false;
+      this.flag = false;
+    },
+    closeErrorEmail() {
+      console.log('closeErrorEmail');
+      this.ShowErrorEmail = false;
+      this.flag = false;
+    },
+    closeErrorPassword() {
+      console.log('closeErrorPassword');
+      this.showErrorPassword = false;
+      this.flag = false;
     }
   },
 
@@ -303,5 +339,4 @@ p{
     text-align: center;
   }
 }
-
 </style>
