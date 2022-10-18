@@ -38,14 +38,14 @@ import useValidate from '@vuelidate/core'
 import { required, email,  maxLength, minLength} from '@vuelidate/validators'
 import {computed, reactive} from "vue";
 import Dialog  from "@/login/pages/Dialog.vue";
+import { loginApiService } from "@/login/services/login-api.service";
 
 export default {
   name: "LoginComponent",
   props: ['show', 'description', 'title', 'close'],
   components: {
-    // register components here
-    // forgot-password component here
-    Dialog
+    Dialog,
+    loginApiService
   },
   setup() {
     const state = reactive({
@@ -79,8 +79,8 @@ export default {
   data () {
     return {
       v$: useValidate(),
-      accounts: [],
       submitted: false,
+      accounts:[],
       users: {
         email: '',
         password: '',
@@ -90,6 +90,13 @@ export default {
       showErrorPassword: false,
       flag: false,
     }
+  },
+  created() {
+    this.service = new loginApiService();
+    this.service.getUsers().then((response) => {
+      this.accounts = response.data;
+      console.log(this.accounts);
+    });
   },
 
   methods: {
@@ -109,6 +116,21 @@ export default {
       else if(this.users.password !== '' && this.users.email === '') {
         this.ShowErrorEmail = true;
         this.flag = true;
+      }
+      else {
+        this.accounts.forEach((account) => {
+          if (account.email === this.users.email && account.password === this.users.password) {
+            if(account.role === 'driver') {
+              this.$router.push("/home-driver/"+account.id);
+            }
+            else {
+              this.$router.push("/home-company/"+account.id);
+            }
+          }
+          else {
+            this.showDialog = true;
+          }
+        })
       }
     },
     cancel() {

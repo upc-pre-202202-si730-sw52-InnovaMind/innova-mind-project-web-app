@@ -23,12 +23,12 @@ const router = createRouter({
             component: () => import("@/views/AboutView.vue"),
         },
         {
-            path: "/home-driver",
+            path: "/home-driver/:id",
             name: "home-driver",
             component: () => import("@/drivers/pages/home_driver.vue"),
         },
         {
-            path: "/home-company",
+            path: "/home-company/:id",
             name: "home-company",
             component: () => import("@/companies/pages/home_company.vue"),
         },

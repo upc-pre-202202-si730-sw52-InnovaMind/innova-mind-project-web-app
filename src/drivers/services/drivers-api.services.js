@@ -1,13 +1,20 @@
 import axios from "axios";
 export class DriversServices {
-    BaseURL = "https://my-json-server.typicode.com/AbelCierto/innova-mind-json-server/drivers";
-    NewsURL = "https://my-json-server.typicode.com/AbelCierto/innova-mind-json-server/driver-news";
+    BaseURL = "http://localhost:3000/drivers";
+    NewsURL = "http://localhost:3000/driver-news";
+    UsersURL= "http://localhost:3000/users";
 
     GetAll() {
         return axios.get(this.BaseURL);
     }
     Add(driver) {
         return axios.post(this.BaseURL, driver);
+    }
+    AddUser(user) {
+        return axios.post(this.UsersURL, user);
+    }
+    GetUserByEmail(email) {
+        return axios.get(this.UsersURL+`?email=${email}`)
     }
     Modify(id, driver) {
         return axios.put(`${this.BaseURL}/${id}`, driver);
