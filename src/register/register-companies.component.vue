@@ -93,6 +93,8 @@
   <div>
     <Dialog :show="showDialog"  :cancel="cancel" title="This email has been registered" description="Please enter another email to created your account" />
     <Dialog :show="showError"  :cancel="cancelError" title="Please fill in the fields required" description="Please fill in all the fields required" />
+    <Dialog :show="showSuccess"  :cancel="closeDialog" title="Registered successfully" description="Go to home and enter your account to init session" />
+    <Dialog :show="showMismatchPassword"  :cancel="validatePassword" title="Confirm the same password" description="Please add the same password to confirm your password" />
   </div>
 </template>
 
@@ -177,6 +179,7 @@ export default {
   data() {
     return {
       users: [],
+      companies: [],
       account: {
         id: '',
         email: '',
@@ -201,6 +204,8 @@ export default {
       showDialog: false,
       registered: false,
       showError: false,
+      showSuccess: false,
+      showMismatchPassword: false,
     };
   },
   created() {
@@ -208,7 +213,11 @@ export default {
     this.service.GetUsers().then((res) => {
       this.users = res.data;
     });
+    this.service.GetAll().then((res) => {
+      this.companies = res.data;
+    });
   },
+
   methods: {
     cancel() {
       this.showDialog = false;
@@ -216,12 +225,19 @@ export default {
     cancelError() {
       this.showError = false;
     },
+    closeDialog() {
+      this.showSuccess = false;
+      this.$router.push('/login');
+    },
+    validatePassword() {
+      this.showMismatchPassword = false;
+    },
     Add() {
-      this.company.id = this.account.id;
-      this.service.Add(this.company).then((response) => {
-        this.company.push(this.company);
+      this.company.id = this.users[this.users.length - 1].id + 1;
+      this.service.AddCompany(this.company).then((response) => {
+        this.companies.push(this.company);
       });
-      this.$router.push('/home-company/'+this.company.id);
+      this.showSuccess = true;
     },
     AddUser() {
       this.account.id = 0;
@@ -229,7 +245,7 @@ export default {
       this.account.password = this.company.password;
       this.account.role = 'company';
       this.service.AddUser(this.account).then((response) => {
-        this.account.push(this.account);
+        this.users.push(this.account);
       });
     },
     verifyEmail() {
@@ -241,15 +257,22 @@ export default {
         }
         else {
           this.registered = false;
+          break;
         }
       }
     },
     SubmitForm() {
       if(this.company.first_name !=='' && this.company.last_name !=='' && this.company.phone !=='' && this.company.email !=='' && this.company.password !=='' && this.company.name !=='' && this.company.region !=='' && this.company.city !=='' && this.company.state !=='' && this.company.address !==''){
-        this.verifyEmail();
-        if (this.registered === false) {
-          this.AddUser();
-          this.Add();
+        if(this.company.password === this.pass)
+        {
+          this.verifyEmail();
+          if (this.registered === false) {
+            this.AddUser();
+
+            this.Add();
+          }
+        } else{
+          this.showMismatchPassword = true;
         }
       }
       else {

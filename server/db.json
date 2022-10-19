@@ -23,137 +23,59 @@
       "id": 2
     },
     {
-      "first_name": "Thorn",
-      "last_name": "Ambrozik",
-      "phone": "926922875",
-      "email": "bmacinherney1@dedecms.com",
-      "password": "123456789",
-      "license": "A-IIa",
-      "country": "Peru",
-      "region": "Lima",
-      "id": 3
-    },
-    {
-      "first_name": "edfggfd",
-      "last_name": "fdgdfdfg",
-      "phone": "dgfdfg",
-      "email": "dg",
-      "password": "dfgd",
-      "license": "A-IIa",
-      "country": "gdgdfg",
-      "region": "dfgdfg",
-      "id": 4
-    },
-    {
-      "id": 5,
-      "first_name": "",
-      "last_name": "",
-      "phone": "",
-      "email": "",
-      "password": "",
-      "license": "",
-      "country": "",
-      "region": ""
+      "id": 4,
+      "first_name": "Abel Angel",
+      "last_name": "Cierto Espiritu",
+      "phone": "920202029",
+      "email": "u20201b561@upc.edu.pe",
+      "password": "123",
+      "license": "A-IIIa",
+      "country": "Perú",
+      "region": "Ucayali"
     }
   ],
   "companies": [
     {
-      "ruc": "15345345",
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 3
+    },
+    {
+      "ruc": "12",
       "id": 5,
-      "first_name": "adad",
-      "last_name": "asdasd",
-      "phone": "345345",
-      "email": "asdas",
-      "password": "dasd",
-      "name": "fssfd",
-      "region": "vcxbcvx",
-      "city": "vxxcvx",
-      "state": "xcvxcv",
-      "address": "xvcxvxcv"
+      "first_name": "Jose",
+      "last_name": "Artemio",
+      "phone": "123456789",
+      "email": "jose@gmail.com",
+      "password": "12345",
+      "name": "Sam",
+      "region": "Auca",
+      "city": "Tingo",
+      "state": "Peru",
+      "address": "Leche vinagre"
     },
     {
-      "first_name": "Roberto",
-      "last_name": "Sanchez",
-      "phone": "983456723",
-      "email": "ronalsanchez0192@gmail.com",
-      "password": "admin123",
-      "name": "Oltursa",
-      "ruc": "10202932123",
-      "region": "Callao",
-      "city": "Callao",
-      "state": "Callao",
-      "address": "Callao ",
-      "id": 6
-    },
-    {
-      "first_name": "Roberto",
-      "last_name": "Sanchez",
-      "phone": "983456723",
-      "email": "ronalsanchez0192@gmail.com",
-      "password": "admin123",
-      "name": "Oltursa",
-      "ruc": "10202932123",
-      "region": "Callao",
-      "city": "Callao",
-      "state": "Callao",
-      "address": "Callao ",
-      "id": 7
-    },
-    {
-      "first_name": "Roberto",
-      "last_name": "Sanchez",
-      "phone": "983456723",
-      "email": "ronalsanchez0192@gmail.com",
-      "password": "admin123",
-      "name": "Oltursa",
-      "ruc": "10202932123",
-      "region": "Callao",
-      "city": "Callao",
-      "state": "Callao",
-      "address": "Callao ",
-      "id": 8
-    },
-    {
-      "first_name": "Roberto",
-      "last_name": "Sanchez",
-      "phone": "983456723",
-      "email": "ronalsanchez0192@gmail.com",
-      "password": "admin123",
-      "name": "Oltursa",
-      "ruc": "10202932123",
-      "region": "Callao",
-      "city": "Callao",
-      "state": "Callao",
-      "address": "Callao ",
-      "id": 9
-    },
-    {
-      "first_name": "Roberto",
-      "last_name": "Sanchez",
-      "phone": "983456723",
-      "email": "ronalsanchez0192@gmail.com",
-      "password": "admin123",
-      "name": "Oltursa",
-      "ruc": "10202932123",
-      "region": "Callao",
-      "city": "Callao",
-      "state": "Callao",
-      "address": "Callao ",
-      "id": 10
-    },
-    {
-      "ruc": "",
-      "id": 11,
-      "first_name": "",
-      "last_name": "",
-      "phone": "",
-      "email": "",
-      "password": "",
-      "name": "",
-      "region": "",
-      "city": "",
-      "state": "",
-      "address": ""
+      "ruc": "1",
+      "id": 6,
+      "first_name": "Juan",
+      "last_name": "Guerra",
+      "phone": "234567891",
+      "email": "juan@gmail.com",
+      "password": "a",
+      "name": "x",
+      "region": "peru",
+      "city": "peru",
+      "state": "peru",
+      "address": "peru"
     }
   ],
   "users": [
@@ -171,56 +93,26 @@
     },
     {
       "id": 3,
-      "email": "bmacinherney1@dedecms.com",
-      "password": "123456789",
-      "role": "driver"
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "role": "company"
     },
     {
       "id": 4,
-      "email": "dg",
-      "password": "dfgd",
+      "email": "u20201b561@upc.edu.pe",
+      "password": "123",
       "role": "driver"
     },
     {
       "id": 5,
-      "email": "asdas",
-      "password": "dasd",
+      "email": "jose@gmail.com",
+      "password": "12345",
       "role": "company"
     },
     {
       "id": 6,
-      "email": "ronalsanchez0192@gmail.com",
-      "password": "admin123",
-      "role": "company"
-    },
-    {
-      "id": 7,
-      "email": "ronalsanchez0192@gmail.com",
-      "password": "admin123",
-      "role": "company"
-    },
-    {
-      "id": 8,
-      "email": "ronalsanchez0192@gmail.com",
-      "password": "admin123",
-      "role": "company"
-    },
-    {
-      "id": 9,
-      "email": "ronalsanchez0192@gmail.com",
-      "password": "admin123",
-      "role": "company"
-    },
-    {
-      "id": 10,
-      "email": "ronalsanchez0192@gmail.com",
-      "password": "admin123",
-      "role": "company"
-    },
-    {
-      "id": 11,
-      "email": "",
-      "password": "",
+      "email": "juan@gmail.com",
+      "password": "a",
       "role": "company"
     }
   ],
