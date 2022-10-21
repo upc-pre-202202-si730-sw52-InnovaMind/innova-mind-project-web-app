@@ -69,14 +69,14 @@ export default {
   },
   created() {
     this.service = new DriversServices();
-    this.service.GetDriverById(3).then((response) => {
+    this.service.GetDriverById(localStorage.getItem("id")).then((response) => {
       this.driver= response.data;
       console.log(response.data);
     });
   },
   methods: {
     save() {
-      this.service.Modify(this.driver.id, this.driver).then((response) => {
+      this.service.ModifyDriver(this.driver.id, this.driver).then((response) => {
         console.log("Saved!");
       });
     },

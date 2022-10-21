@@ -8,11 +8,14 @@ export class DriversServices {
     }
     AddDriver(driver) {
         return axios.post(`${this.BaseURL}`, driver);
+    }
     GetDriverById(id) {
         return axios.get(`${this.BaseURL}/${id}`);
     }
 
-    Modify(id, driver) {
+    ModifyDriver(id, driver) {
+        return axios.put(`${this.BaseURL}/${id}`, driver);
+    }
     AddUser(user) {
         return axios.post(this.UsersURL, user);
     }
@@ -24,4 +27,5 @@ export class DriversServices {
     }
     GetUserByEmail (email) {
         return axios.get(`${this.UsersURL}?email=${email}`);
+    }
 }

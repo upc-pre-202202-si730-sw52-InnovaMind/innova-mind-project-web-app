@@ -69,14 +69,14 @@ export default {
   },
   created() {
     this.service = new CompaniesServices();
-    this.service.GetCompanyById(3).then((response) => {
+    this.service.GetCompanyById(localStorage.getItem("id")).then((response) => {
       this.recruiter= response.data;
       console.log(response.data);
     });
   },
   methods: {
     save() {
-      this.service.Modify(this.recruiter.id, this.recruiter).then((response) => {
+      this.service.ModifyCompany(this.recruiter.id, this.recruiter).then((response) => {
         console.log("Saved!");
       });
     },

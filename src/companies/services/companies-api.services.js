@@ -22,7 +22,7 @@ export class CompaniesServices {
     GetUserByEmail (email) {
         return axios.get(this.userEmail+`${email}`);
     }
-    Modify(id, company) {
+    ModifyCompany(id, company) {
         return axios.put(`${this.BaseURL}/${id}`, company);
     }
     Delete(id) {
