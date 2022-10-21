@@ -76,6 +76,34 @@
       "city": "peru",
       "state": "peru",
       "address": "peru"
+    },
+    {
+      "ruc": "sdgfgf",
+      "id": 7,
+      "first_name": "dsgfdsfg",
+      "last_name": "sdfgdfg",
+      "phone": "sdfgsdfg",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "123",
+      "name": "sdfggdf",
+      "region": "sdfgdfdgsf",
+      "city": "dfsg",
+      "state": "sdfggsdf",
+      "address": "sgdfsgdf"
+    },
+    {
+      "ruc": "ADSF",
+      "id": 8,
+      "first_name": "ADSFDSF",
+      "last_name": "ASDFADS",
+      "phone": "ADSFASDF",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "123",
+      "name": "ADSF",
+      "region": "ADSF",
+      "city": "FDSA",
+      "state": "ASDF",
+      "address": "ASDF"
     }
   ],
   "users": [
@@ -113,6 +141,18 @@
       "id": 6,
       "email": "juan@gmail.com",
       "password": "a",
+      "role": "company"
+    },
+    {
+      "id": 7,
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "123",
+      "role": "company"
+    },
+    {
+      "id": 8,
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "123",
       "role": "company"
     }
   ],
