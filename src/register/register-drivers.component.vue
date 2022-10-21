@@ -75,6 +75,8 @@
   <div>
     <Dialog :show="showDialog"  :cancel="cancel" title="This email has been registered" description="Please enter another email to created your account" />
     <Dialog :show="showError"  :cancel="cancelError" title="Please fill in the fields required" description="Please fill in all the fields required" />
+    <Dialog :show="showSuccess"  :cancel="closeDialog" title="Registered successfully" description="Go to home and enter your account to init session" />
+    <Dialog :show="showMismatchPassword"  :cancel="validatePassword" title="Confirm the same password" description="Please add the same password to confirm your password" />
   </div>
 </template>
 
@@ -85,11 +87,12 @@ import {computed, reactive} from "vue";
 import {email, maxLength, minLength, required} from "@vuelidate/validators";
 import useValidate from "@vuelidate/core";
 
+
 export default {
-    props: ['show', 'description', 'title', 'close'],
-    components: {
-      Dialog
-    },
+  props: ['show', 'description', 'title', 'close'],
+  components: {
+    Dialog
+  },
   setup() {
     const state = reactive({
       driver: {
@@ -138,9 +141,9 @@ export default {
       }
     })
     const v$ = useValidate(state, rules)
-      return {
-        state,
-        v$
+    return {
+      state,
+      v$
     }
   },
   data() {
@@ -160,6 +163,7 @@ export default {
         password: '',
         role: '',
       },
+      drivers: [],
       driver: {
         id: '',
         first_name: '',
@@ -175,12 +179,17 @@ export default {
       showDialog: false,
       registered: false,
       showError: false,
+      showSuccess: false,
+      showMismatchPassword: false,
     };
   },
   created() {
     this.service = new DriversServices();
     this.service.GetUsers().then((res) => {
       this.users = res.data;
+    });
+    this.service.GetAll().then((res) => {
+      this.drivers = res.data;
     });
   },
   methods: {
@@ -190,12 +199,12 @@ export default {
     cancelError() {
       this.showError = false;
     },
-    Add() {
-      this.driver.id = this.account.id;
-      this.service.Add(this.driver).then((response) => {
-        this.driver.push(this.driver);
-      });
-      this.$router.push("/home-driver/"+ this.driver.id);
+    closeDialog() {
+      this.showSuccess = false;
+      this.$router.push("/login");
+    },
+    validatePassword() {
+      this.showMismatchPassword = false;
     },
     AddUser() {
       this.account.id = 0;
@@ -206,24 +215,39 @@ export default {
         this.users.push(this.account);
       });
     },
+    Add() {
+      this.driver.id = this.users[this.users.length - 1].id+1;
+      this.service.AddDriver(this.driver).then((response) => {
+        this.drivers.push(this.driver);
+      });
+      this.showSuccess = true;
+    },
     verifyEmail() {
       for (let i = 0; i < this.users.length; i++) {
-        if (this.user[i].email === this.driver.email) {
+        if (this.users[i].email === this.driver.email) {
           this.showDialog = true;
           this.registered = true;
           break;
         }
         else {
           this.registered = false;
+          break;
         }
       }
     },
     SubmitForm() {
-      if(this.driver.first_name !== "" && this.driver.last_name !== "" && this.driver.phone !== "" && this.driver.email !== "" && this.driver.password !== "" && this.driver.license !== "" && this.driver.country !== "" && this.driver.region !== "" && this.pass !== ""){
-        this.verifyEmail();
-        if (this.registered === false) {
-          this.AddUser();
-          this.Add();
+      if(this.driver.first_name !== "" && this.driver.last_name !== "" && this.driver.phone !== "" && this.driver.email !== ""
+          && this.driver.password !== "" && this.driver.license !== "" && this.driver.country !== "" && this.driver.region !== ""
+          && this.pass !== ""){
+        if (this.pass === this.driver.password) {
+          this.verifyEmail();
+          if(!this.registered) {
+            this.AddUser();
+            this.Add();
+          }
+        }
+        else {
+          this.showMismatchPassword = true;
         }
       }
       else {

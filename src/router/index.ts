@@ -13,6 +13,10 @@ const router = createRouter({
             component: LoginComponent,
         },
         {
+            path: "/login",
+            redirect: "/",
+        },
+        {
             path: "/register",
             name: "register",
             component: () => import("@/views/RegisterView.vue"),
@@ -23,12 +27,12 @@ const router = createRouter({
             component: () => import("@/views/AboutView.vue"),
         },
         {
-            path: "/home-driver/:id",
+            path: "/home-driver",
             name: "home-driver",
             component: () => import("@/drivers/pages/home_driver.vue"),
         },
         {
-            path: "/home-company/:id",
+            path: "/home-company",
             name: "home-company",
             component: () => import("@/companies/pages/home_company.vue"),
         },

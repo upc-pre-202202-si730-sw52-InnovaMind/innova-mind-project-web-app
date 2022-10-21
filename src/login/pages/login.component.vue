@@ -47,35 +47,6 @@ export default {
     Dialog,
     loginApiService
   },
-  setup() {
-    const state = reactive({
-      users: {
-        email: '',
-        password: ''
-      }
-    })
-    const rules = computed(() => {
-          return {
-            users: {
-              email: {
-                required,
-                email
-              },
-              password: {
-                required,
-                minLength: minLength(8),
-                maxLength: maxLength(16)
-              }
-            },
-          }
-    })
-    const v$ = useValidate(state, rules)
-
-    return {
-      state,
-      v$
-    }
-  },
   data () {
     return {
       v$: useValidate(),
@@ -91,6 +62,7 @@ export default {
       flag: false,
     }
   },
+
   created() {
     this.service = new loginApiService();
     this.service.getUsers().then((response) => {
@@ -98,13 +70,61 @@ export default {
       console.log(this.accounts);
     });
   },
+  mounted() {
+    if(localStorage.getItem('id')) {
+      if(localStorage.getItem('role') === 'driver') {
+        this.$router.push('/home-driver');
+        alert("The method mounted is executed in home driver");
+      } else {
+        this.$router.push('/home-company');
+        alert("The method mounted is executed in home company");
+      }
+    }
+    else{
+      this.$router.push('/login');
+      alert("The method mounted is executed to login");
+    }
+  },
+  setup() {
+    const state = reactive({
+      users: {
+        email: '',
+        password: ''
+      }
+    })
+    const rules = computed(() => {
+      return {
+        users: {
+          email: {
+            required,
+            email
+          },
+          password: {
+            required,
+            minLength: minLength(8),
+            maxLength: maxLength(16)
+          }
+        },
+      }
+    })
+    const v$ = useValidate(state, rules)
+
+    return {
+      state,
+      v$
+    }
+  },
 
   methods: {
     landingPage() {
       window.location.href = `https://upc-pre-202202-si730-sw52-innovamind.github.io/`;
     },
     submitForm() {
-
+      let config = {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }
       if(this.users.email === '' && this.users.password === '') {
         this.showDialog = true;
         this.flag = true;
@@ -120,11 +140,20 @@ export default {
       else {
         this.accounts.forEach((account) => {
           if (account.email === this.users.email && account.password === this.users.password) {
+            localStorage.setItem('id', account.id);
+            localStorage.setItem('email', account.email);
+            localStorage.setItem('password', account.password);
+            localStorage.setItem('role', account.role);
+            console.log(localStorage.getItem('role'));
             if(account.role === 'driver') {
-              this.$router.push("/home-driver/"+account.id);
+              this.$router.push("/home-driver");
+              console.log(account);
+              return;
             }
             else {
-              this.$router.push("/home-company/"+account.id);
+              this.$router.push("/home-company");
+              console.log(account);
+              return;
             }
           }
           else {
