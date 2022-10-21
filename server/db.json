@@ -156,6 +156,27 @@
       "role": "company"
     }
   ],
+
+  "driver-news": [
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    }
+  ],
   
   "company-news": [
     {

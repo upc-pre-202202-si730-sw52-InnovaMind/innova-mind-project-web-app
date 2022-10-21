@@ -55,10 +55,10 @@
     </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import "primeicons/primeicons.css";
 import Sidebar from "../components/Sidebar.vue";
-import { DriversServices } from "../services/drivers-api.services";
+import { DriversServices } from "../services/drivers-api.services.js";
 
 export default {
     components: {
@@ -71,14 +71,20 @@ export default {
               { "title": ""},
               { "author": ""}
             ],
+            
         };
     },
     created() {
-        this.service = new DriversServices();
+        try {
+            this.service = new DriversServices();
         this.service.GetDriversNews().then((response) => {
             this.news = response.data;
             console.log(response.data);
         });
+            
+        } catch (error) {
+            
+        }
     },
     methods: {},
 };

@@ -25,4 +25,7 @@ export class DriversServices {
     GetJobsDriver(id) {
         return axios.get(`${this.JobsURL}?idUser=${id}`);
     }
+    GetDriversNews() {
+        return axios.get(this.NewsURL);
+    }
 }

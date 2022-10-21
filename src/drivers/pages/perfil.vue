@@ -83,7 +83,7 @@
     </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import "primeicons/primeicons.css";
 import Button from 'primevue/button';
 import Sidebar from "@/drivers/components/Sidebar.vue";
@@ -104,10 +104,12 @@ export default {
             service: null,
             news: [],
             jobs: [],
+            user_id: "",
 
         };
     },
     created() {
+        // this.user_id=localStorage.getItem('role');
     this.service = new DriversServices();
     this.service.Getdriver(1).then((response) => {
       this.Perfil = response.data;
