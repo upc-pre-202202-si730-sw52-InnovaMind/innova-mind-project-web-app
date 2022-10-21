@@ -3,13 +3,13 @@ import HomeCompany from "@/companies/pages/home_company.vue";
 import AboutView from "@/views/AboutView.vue";
 import LoginComponent from "@/login/pages/login.component.vue";
 import HomeDriver from "@/drivers/pages/home_driver.vue";
-//import PageNotFound from "@/page-not-found/pages/page-not-found.component.vue";
+
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
             path: "/",
-            name: "login",
+            name: "home",
             component: LoginComponent,
         },
         {
@@ -25,6 +25,42 @@ const router = createRouter({
             path: "/about",
             name: "about",
             component: () => import("@/views/AboutView.vue"),
+        },
+        /* Drivers routing */
+        {
+            path: "/driver",
+            name: "driver",
+            component: () => import("@/views/DriverView.vue"),
+            children:[
+                {
+                    path: "home",
+                    name: "home",
+                    component: () => import("@/drivers/pages/home_driver.vue"),
+                },
+                {
+                    path: "messages",
+                    name: "messages",
+                    component: () => import("@/drivers/pages/messages_driver.vue"),
+                }
+            ],
+        },
+        /* Companies routing */
+        {
+            path: "/company",
+            name: "company",
+            component: () => import("@/views/CompanyView.vue"),
+            children:[
+                {
+                    path: "home",
+                    name: "home",
+                    component: () => import("@/companies/pages/home_company.vue"),
+                },
+                {
+                    path: "messages",
+                    name: "messages",
+                    component: () => import("@/companies/pages/messages_company.vue"),
+                }
+            ],
         },
         {
             path: "/home-driver",
