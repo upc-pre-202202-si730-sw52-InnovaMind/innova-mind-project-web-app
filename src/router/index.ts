@@ -6,6 +6,7 @@ import HomeDriver from "@/drivers/pages/home_driver.vue";
 
 import PageNotFound from "@/page-not-found/pages/page-not-found.component.vue";
 import Perfil from "@/drivers/pages/perfil.vue"
+import PerfilCompany from "@/companies/pages/perfil_company.vue"
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -48,6 +49,11 @@ const router = createRouter({
             path: "/perfil-driver",
             name: "perfil-driver",
             component: () => import("@/drivers/pages/perfil.vue"),
+        },
+        {
+            path: "/perfil-company",
+            name: "perfil-company",
+            component: () => import("@/companies/pages/perfil_company.vue"),
         },
     ],
 });

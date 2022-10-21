@@ -28,4 +28,7 @@ export class CompaniesServices {
     GetCompaniesNews() {
         return axios.get(this.NewsURL);
     }
+    Getcompanie(id) {
+        return axios.get(`${this.BaseURL}/${id}`);
+    }
 }
