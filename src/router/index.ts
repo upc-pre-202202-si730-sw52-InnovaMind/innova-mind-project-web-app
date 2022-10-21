@@ -37,6 +37,11 @@ const router = createRouter({
             name: "driver-settings",
             component: () => import("@/drivers/pages/driver_settings.vue"),
         },
+        {
+            path: "/company-settings",
+            name: "company-settings",
+            component: () => import("@/companies/pages/company_settings.vue"),
+        },
     ],
 });
 export default router;

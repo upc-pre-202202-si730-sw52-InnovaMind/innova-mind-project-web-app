@@ -6,6 +6,9 @@ export class CompaniesServices {
     GetAll() {
         return axios.get(this.BaseURL);
     }
+    GetCompanyById(id) {
+        return axios.get(`${this.BaseURL}/${id}`);
+    }
     Add(company) {
         return axios.post(this.BaseURL, company);
     }

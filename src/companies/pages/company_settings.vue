@@ -12,35 +12,35 @@
           <div class="field" style="display: inline-grid">
             <label>Full Name</label>
             <br/>
-            <pv-input-text  type="text" v-model="driver.first_name"/>
+            <pv-input-text  type="text" v-model="recruiter.first_name"/>
           </div>
           <div class="field" style="display: inline-grid">
-            <label>License</label>
+            <label>RUC</label>
             <br/>
-            <pv-input-text  type="text" v-model="driver.license"/>
+            <pv-input-text  type="text" v-model="recruiter.ruc"/>
           </div>
           <div class="field" style="display: inline-grid">
             <label>Email</label>
             <br/>
-            <pv-input-text  type="text" v-model="driver.email"/>
+            <pv-input-text  type="text" v-model="recruiter.email"/>
           </div>
 
           <div class="field" style="display: inline-grid">
             <label>Password</label>
             <br/>
-            <pv-input-text  type="password" v-model="driver.password"/>
+            <pv-input-text  type="password" v-model="recruiter.password"/>
           </div>
 
           <div  class="field" style="display: inline-grid">
             <label>Phone</label>
             <br/>
-            <pv-input-text  type="text" v-model="driver.phone"/>
+            <pv-input-text  type="text" v-model="recruiter.phone"/>
           </div>
 
           <div class="field" style="display: inline-grid">
             <label>Location</label>
             <br/>
-            <pv-input-text  type="text" v-model="driver.country"/>
+            <pv-input-text  type="text" v-model="recruiter.city"/>
           </div>
         </div>
       </template>
@@ -55,34 +55,34 @@
 <script lang="js">
 import "primeicons/primeicons.css";
 import Sidebar from "../components/Sidebar.vue";
-import { DriversServices } from "../services/drivers-api.services";
-export default {
+import { CompaniesServices } from "@/companies/services/companies-api.services";
 
+export default {
   components: {
     Sidebar,
   },
-  name: "driver-settings.vue",
+  name: "company_settings",
   data() {
     return {
-      driver: {},
+      recruiter: {},
     };
   },
   created() {
-    this.service = new DriversServices();
-    this.service.GetDriverById(3).then((response) => {
-      this.driver= response.data;
+    this.service = new CompaniesServices();
+    this.service.GetCompanyById(3).then((response) => {
+      this.recruiter= response.data;
       console.log(response.data);
     });
   },
   methods: {
     save() {
-      this.service.Modify(this.driver.id, this.driver).then((response) => {
+      this.service.Modify(this.recruiter.id, this.recruiter).then((response) => {
         console.log("Saved!");
       });
     },
     restart() {
-      this.service.GetDriverById(this.driver.id).then((response) => {
-        this.driver= response.data;
+      this.service.GetCompanyById(this.recruiter.id).then((response) => {
+        this.recruiter= response.data;
         console.log("Restarting!");
       });
     },
@@ -122,12 +122,13 @@ img {
   .main {
     height: auto;
   }
+
   .grid {
     grid-template-columns: 1fr;
   }
+
   img {
     grid-column: 1/2;
   }
 }
-
 </style>
