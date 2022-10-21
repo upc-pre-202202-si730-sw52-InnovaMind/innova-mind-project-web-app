@@ -7,6 +7,9 @@ export class CompaniesServices {
     GetAll() {
         return axios.get(this.BaseURL);
     }
+    GetCompanyById(id) {
+        return axios.get(`${this.BaseURL}/${id}`);
+    }
     AddCompany(company) {
         return axios.post(this.BaseURL, company);
     }
@@ -19,7 +22,7 @@ export class CompaniesServices {
     GetUserByEmail (email) {
         return axios.get(this.userEmail+`${email}`);
     }
-    Modify(id, company) {
+    ModifyCompany(id, company) {
         return axios.put(`${this.BaseURL}/${id}`, company);
     }
     Delete(id) {
