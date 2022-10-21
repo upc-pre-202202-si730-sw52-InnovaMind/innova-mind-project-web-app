@@ -2,6 +2,7 @@ import axios from "axios";
 export class DriversServices {
     BaseURL = "http://localhost:3000/drivers";
     NewsURL = "http://localhost:3000/driver-news";
+    JobsURL = "http://localhost:3000/jobsdrivers";
 
     GetAll() {
         return axios.get(this.BaseURL);
@@ -20,5 +21,8 @@ export class DriversServices {
     }
     Getdriver(id) {
         return axios.get(`${this.BaseURL}/${id}`);
+    }
+    GetJobsDriver(id) {
+        return axios.get(`${this.JobsURL}?idUser=${id}`);
     }
 }

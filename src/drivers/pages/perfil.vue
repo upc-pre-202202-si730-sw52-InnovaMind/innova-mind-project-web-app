@@ -46,17 +46,28 @@
         <div class="center-bar">
             <div class="profile-bar">
                 <div class="profile-image2">
-                    <Card>
-                        <template #header>
+                   
                             <img alt="user header" src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg">
-                        </template>
-                    </Card>
+                    
 
                 </div>
+                <Card style="width: 100%; margin-top: 2em" v-for="(New, i) in news" :key="i">
+                    <template #header>
+                        <img :src="New.photo" style="height: 15rem" />
+                    </template>
+                    <template #title> {{ New.title }} </template>
+                    <template #subtitle> {{ New.author }} </template>
+                    <template #content>
+                        <p>
+                            {{ New.description }}
+                        </p>
+                    </template>
+                    
+                </Card>
             
 
             </div>
-            <h2>These are your lastest publications</h2>
+            <!-- <h2>These are your lastest publications</h2> -->
         </div>
         <div class="right-bar">
             <div class="profile-bar">
@@ -91,6 +102,8 @@ export default {
             name: "String",
             Perfil: {},
             service: null,
+            news: [],
+            jobs: [],
 
         };
     },
@@ -100,6 +113,14 @@ export default {
       this.Perfil = response.data;
       console.log(response.data);
     });
+    this.service.GetDriversNews().then((response) => {
+            this.news = response.data;
+            console.log(response.data);
+        });
+        // this.service.GetJobsDriver(1).then((response) => {
+        //     this.jobs = response.data;
+        //     console.log(response.data);
+        // });
   },
   methods: {},
 
@@ -162,8 +183,7 @@ export default {
 .profile-bar {
     display: flex;
     height: 6rem;
-    align-items: center;
-    justify-content: flex-end;
+    flex-direction: column;
 }
 .left-profile-bar {
     display: flex;
@@ -194,10 +214,14 @@ export default {
     min-width: 60px;
     margin: 0 20px;
 }
-.profile-image2 {
+
+.profile-image2 img{
     width: 100%;
     height: 100%;
-    margin: 0 20px;
+}
+.profile-image2 img{
+    width: 100%;
+    border: 2rem solid #fff;
 }
 .profile-image img {
     width: 100%;
