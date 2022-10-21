@@ -29,7 +29,6 @@ import Card from "primevue/card";
 import Password from "primevue/password";
 
 
-
 const app = createApp(App);
 app.use(router);
 

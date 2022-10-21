@@ -3,6 +3,8 @@ import HomeCompany from "@/companies/pages/home_company.vue";
 import AboutView from "@/views/AboutView.vue";
 import LoginComponent from "@/login/pages/login.component.vue";
 import HomeDriver from "@/drivers/pages/home_driver.vue";
+
+import PageNotFound from "@/page-not-found/pages/page-not-found.component.vue";
 import Perfil from "@/drivers/pages/perfil.vue"
 
 const router = createRouter({
@@ -10,8 +12,12 @@ const router = createRouter({
     routes: [
         {
             path: "/",
-            name: "home",
+            name: "login",
             component: LoginComponent,
+        },
+        {
+            path: "/login",
+            redirect: "/",
         },
         {
             path: "/register",
@@ -32,6 +38,11 @@ const router = createRouter({
             path: "/home-company",
             name: "home-company",
             component: () => import("@/companies/pages/home_company.vue"),
+        },
+        {
+            path: "/:pathMatch(.*)*",
+            name: "page-not-found",
+            component: PageNotFound,
         },
         {
             path: "/perfil-driver",
