@@ -1,74 +1,165 @@
 <template>
   <div class="login">
-    <pv-button class="p-button-link" label="Back" icon="pi pi-arrow-left" @click="landindPage()"/>
-    <table>
-      <tr>
-        <th>
-          <img class="pi-images" src="../../assets/images/logoZenDriver.png">
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <h1>ZenDriver</h1>
-        </th>
-      </tr>
-      <tr>
-        <td>
-          <p>Please fill in yor credentials</p>
-        </td>
-      </tr>
-    </table>
+    <pv-button class="p-button-link" icon="pi pi-arrow-left" @click="landingPage()"/>
+    <div class="container-init">
+      <img class="image-company" src="../../assets/images/logoZenDriver.png" alt="Image of company">
+      <h1>ZenDriver</h1>
+      <p>Please fill in yor credentials</p>
+    </div>
     <pv-card class="card">
       <template #content>
         <span class="p-float-label">
-          <pv-input-text class="p-input" v-model="users.email" type="text"/>
-          <label for="users.email">Email or number telephone</label>
+          <pv-input-text class="p-input" v-model="users.email" type="text" placeholder="Email" :disabled="flag"/>
+          <span v-if="!users.email" class="p-error">Email is required.</span>
         </span>
         <span class="p-float-label">
-          <pv-input-text class="p-input" v-model="users.password" type="password"/>
-          <label for="users.password">Password</label>
+          <pv-input-text class="p-input" v-model="users.password" type="password" placeholder="Password" :disabled="flag"/>
+          <span v-if="!users.password" class="p-error">Password is required.</span>
         </span>
-      </template>
-      <template #footer>
-        <pv-button class="p-button-label" icon="mr-2 mb-2" label="Log In"></pv-button>
-        <br><br>
-        <router-link id="router" to="/forgotPassword" class="p-button-label">Forgot password?</router-link>
-        <br><br>
+        <pv-button @click="submitForm" class="p-button-raised button"  icon="mr-2 mb-2" label="Log In" :isabled="flag"></pv-button>
+        <router-link id="router" to="/forgot-password" class="p-button-label">Forgot password?</router-link>
         <router-link id="router"  to="/register" class="p-button-label">Create account</router-link>
       </template>
     </pv-card>
-    <pv-tag class="p-tag" >© 2022 Innova Mind.All your privacy is sure!</pv-tag>
+    <div class="container">
+      <pv-tag class="p-tag" >© 2022 Innovate Mind.All your privacy is sure!</pv-tag>
+    </div>
+  </div>
+
+  <div>
+    <Dialog :show="showDialog"  :cancel="cancel" title="Invalid credentials" description="Please enter a correct email and password" />
+    <Dialog :show="ShowErrorEmail" :cancel="closeErrorEmail" title="Enter a Email" description="Please enter a correct email" />
+    <Dialog :show="showErrorPassword" :cancel="closeErrorPassword" title="Enter a Password" description="Please enter a correct password" />
   </div>
 </template>
 
 <script>
+import useValidate from '@vuelidate/core'
+import { required, email,  maxLength, minLength} from '@vuelidate/validators'
+import {computed, reactive} from "vue";
+import Dialog  from "@/login/pages/Dialog.vue";
+import { loginApiService } from "@/login/services/login-api.service";
+
 export default {
   name: "LoginComponent",
+  props: ['show', 'description', 'title', 'close'],
   components: {
-    // register components here
-    // forgot-password component here
+    Dialog,
+    loginApiService
   },
-  data () {
-    return {
-      accounts: [],
-      submitted: false,
+  setup() {
+    const state = reactive({
       users: {
         email: '',
         password: ''
-      },
+      }
+    })
+    const rules = computed(() => {
+          return {
+            users: {
+              email: {
+                required,
+                email
+              },
+              password: {
+                required,
+                minLength: minLength(8),
+                maxLength: maxLength(16)
+              }
+            },
+          }
+    })
+    const v$ = useValidate(state, rules)
 
+    return {
+      state,
+      v$
     }
   },
+  data () {
+    return {
+      v$: useValidate(),
+      submitted: false,
+      accounts:[],
+      users: {
+        email: '',
+        password: '',
+      },
+      showDialog: false,
+      ShowErrorEmail: false,
+      showErrorPassword: false,
+      flag: false,
+    }
+  },
+  created() {
+    this.service = new loginApiService();
+    this.service.getUsers().then((response) => {
+      this.accounts = response.data;
+      console.log(this.accounts);
+    });
+  },
+
+
   methods: {
+    landingPage() {
+      window.location.href = `https://upc-pre-202202-si730-sw52-innovamind.github.io/`;
+    },
     submitForm() {
-      this.submitted = true;
-      this.$v.$touch();
-      if (this.$v.$invalid) {
-        return false;
+      let config = {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      };
+
+      if(this.users.email === '' && this.users.password === '') {
+        this.showDialog = true;
+        this.flag = true;
+      }
+      else if(this.users.email !== '' && this.users.password === '') {
+        this.showErrorPassword = true;
+        this.flag = true;
+      }
+      else if(this.users.password !== '' && this.users.email === '') {
+        this.ShowErrorEmail = true;
+        this.flag = true;
+      }
+      else {
+        this.accounts.forEach((account) => {
+          if (account.email === this.users.email && account.password === this.users.password) {
+            localStorage.setItem('id', account.id);
+            localStorage.setItem('email', account.email);
+            localStorage.setItem('email', account.password);
+            localStorage.setItem('role', account.role);
+            console.log(localStorage.getItem('role'));
+            if(account.role === 'driver') {
+              this.$router.push("/home-driver");
+              return;
+            }
+            else {
+              this.$router.push("/home-company");
+              return;
+            }
+          }
+          else {
+            this.showDialog = true;
+          }
+        })
       }
     },
-    landindPage() {
-      window.location.href = `https://upc-pre-202202-si730-sw52-innovamind.github.io/`;
+    cancel() {
+      console.log('cancel');
+      this.showDialog = false;
+      this.flag = false;
+    },
+    closeErrorEmail() {
+      console.log('closeErrorEmail');
+      this.ShowErrorEmail = false;
+      this.flag = false;
+    },
+    closeErrorPassword() {
+      console.log('closeErrorPassword');
+      this.showErrorPassword = false;
+      this.flag = false;
     }
   },
 
@@ -81,85 +172,206 @@ export default {
   position: absolute;
   width: 60%;
   height: 80%;
-  left: 20%  ;
-  margin-top: 5%;
+  top:10%;
+  left: 20%;
   background: #02AAEE;
   border: 1px solid #000000;
-  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
   border-radius: 14px;
 }
-table{
-  margin-top: 0%;
-  width: 100%;
-  height: 10%;
-}
-.pi-images {
-  width: 10%;
-  height: 20%;
-  position: relative;
-}
-th, td{
-  padding: 0;
+
+.container-init {
+  width:80%;
+  height: 30%;
   text-align: center;
-  border-collapse: collapse;
-  /*border: #000000 solid;*/
+  margin: auto auto;
 }
-table p{
-  font-size: small;
+
+.image-company{
+  width: 20%;
+  height: 40%;
+}
+
+h1 {
+  font-size: 1.5rem;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
-table h1 {
-  font-size: x-large;
+
+p{
+  font-size: 1rem;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
+
 .card{
   background-color: #007BBB;
   border: 1px solid #000000;
   border-radius: 20px;
   width: 80%;
-  height: 55%;
-  margin-left: 10%;
-  margin-top: 2%;
+  height: 50%;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
-.p-tag{
-  color: #FFFFFF;
-  text-decoration: none;
-  font-size: 2vh;
-  margin-left: 30%;
-  background-color: #02AAEE;
-  margin-top: 1%;
 
-}
-.p-float-label{
-  margin-left: 20%;
-  padding: 0.5vh;
-}
-.p-button-label{
-  margin-left: 30%;
-  background-color: black;
-  width: 40%;
-  height: 10%;
-}
 .p-input{
-  width: 80%;
+  width: 100%;
   height: 10%;
   border: #000000 solid;
   border-radius: 2vh;
 }
+
+.p-float-label{
+  padding: 0.5vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+
+.button {
+  margin: auto auto;
+  background-color: black;
+  color: white;
+  display: inline-block;
+}
+
 #router{
   background-color: #007BBB;
   color: #000000;
-  margin-left: 40%;
   align-items: center;
-  font-size: 1.2rem;
-  margin-top: 1vh;
+  font-size: 2.5vh;
+  padding: 0.5vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-#router:hover{
-  background-color: #007BBB;
+
+#router:hover {
   text-decoration: underline;
   text-align: center;
   font-weight: bold;
+  padding: 0.5vh;
+}
+
+.container {
+  text-align: center;
+  padding: 1vh;
+}
+
+.p-tag{
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 2vh;
+  background-color: #02AAEE;
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .login {
+    box-sizing: border-box;
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    top:10%;
+    left: 5%;
+    background: #02AAEE;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    border-radius: 14px;
+  }
+
+  .container-init {
+    width:80%;
+    height: 30%;
+    text-align: center;
+    margin: auto auto;
+  }
+
+  .image-company{
+    width: 20%;
+    height: 40%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  p{
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .card{
+    background-color: #007BBB;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    width: 90%;
+    height: 50%;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .p-input{
+    width: 100%;
+    height: 10%;
+    border: #000000 solid;
+    border-radius: 2vh;
+  }
+
+  .p-float-label{
+    padding: 0.5vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .button {
+    margin: auto auto;
+    background-color: black;
+    color: white;
+    display: inline-block;
+  }
+
+  #router{
+    background-color: #007BBB;
+    color: #000000;
+    align-items: center;
+    font-size: 2.5vh;
+    padding: 0.5vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #router:hover {
+    text-decoration: underline;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5vh;
+  }
+
+  .container {
+    text-align: center;
+    padding: 1vh;
+  }
+
+  .p-tag{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 2vh;
+    background-color: #02AAEE;
+    text-align: center;
+  }
 }
 </style>

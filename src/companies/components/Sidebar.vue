@@ -3,7 +3,7 @@
     <div class="logo">
       <img
           class="logo-image"
-          src="src/assets/images/logoZenDriver.png"
+          src="../../assets/images/logoZenDriver.png"
           alt="ZenDriver's logo"
       />
       <p class="logo-text">ZenDriver</p>
