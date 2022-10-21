@@ -6,6 +6,9 @@ export class DriversServices {
     GetAll() {
         return axios.get(this.BaseURL);
     }
+    GetDevById(id) {
+        return axios.get(`${this.BaseURL}/${id}`);
+    }
     Add(driver) {
         return axios.post(this.BaseURL, driver);
     }
