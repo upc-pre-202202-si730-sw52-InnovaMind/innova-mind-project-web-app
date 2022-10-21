@@ -156,44 +156,7 @@
       "role": "company"
     }
   ],
-  "driver-news": [
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-    },
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-    },
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-    },
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-    },
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-    },
-    {
-      "author": "Henry Turrones",
-      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-      "title": "Need a AIIIC driver",
-      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-    }
-  ],
+  
   "company-news": [
     {
       "author": "Ministerio de transportes y comunicaciones",
@@ -207,5 +170,32 @@
       "title": "Construction begins on the Huactahuaru tunnel that will join the Ancash and Huánuco regions",
       "description": "Provías Nacional began construction of the Huactahuaru tunnel, which is located at kilometer 144 of section III of the Huánuco-La Unión-Huallanca highway, which will join the regions of Huánuco and Áncash, reported the Ministry of Transport and Communications (MTC)."
     }
+  ],
+  "jobsdrivers":[
+    {
+      "id": 1,
+      "idUser": 2,
+      "companieid": 2,
+      "images": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title":"dsaasd5454",
+      "description": "dasdasdasdas45"
+  },
+  {
+    "id": 2,
+    "idUser": 1,
+    "companieid": 2,
+    "images": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+    "title":"dsaasd",
+    "description": "dasdasdasdas"
+},
+{
+  "id": 3,
+  "idUser": 1,
+  "companieid": 2,
+  "images": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+  "title":"dsaasjkjld",
+  "description": "dasdashihodasdas"
+}
+    
   ]
 }

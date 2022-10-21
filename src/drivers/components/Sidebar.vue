@@ -10,10 +10,12 @@
         </div>
         <ul>
             <li>
-                <div>
-                    <i class="pi pi-home"></i>
-                    <p>Home</p>
-                </div>
+                <router-link to="/perfil-driver" style="text-decoration: none;">
+                    <div>
+                        <i class="pi pi-home"></i>
+                        <p>Home</p>
+                    </div>
+                </router-link>
             </li>
             <li>
                 <div>
@@ -108,5 +110,9 @@ li div p {
 
 li div i {
     font-size: 1.4rem;
+}
+router-link{
+    text-decoration: none;
+   
 }
 </style>

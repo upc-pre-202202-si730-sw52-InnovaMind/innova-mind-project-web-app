@@ -62,22 +62,24 @@ import Sidebar from "../components/Sidebar.vue";
 import { CompaniesServices } from "../services/companies-api.services";
 
 export default {
-    components: {
-        Sidebar,
-    },
-    data() {
-        return {
-            news: [],
-        };
-    },
-    created() {
-        this.service = new CompaniesServices();
-        this.service.GetCompaniesNews().then((response) => {
-            this.news = response.data;
-            console.log(response.data);
-        });
-    },
-    methods: {},
+
+  components: {
+    Sidebar,
+  },
+  data() {
+    return {
+      news: [],
+      service:null,
+    };
+  },
+  created() {
+    this.service = new CompaniesServices();
+    this.service.GetCompaniesNews().then((response) => {
+      this.news = response.data;
+      console.log(response.data);
+    });
+  },
+  methods: {},
 };
 </script>
 
