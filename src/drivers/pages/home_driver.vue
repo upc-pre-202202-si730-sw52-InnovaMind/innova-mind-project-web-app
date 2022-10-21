@@ -43,7 +43,7 @@
 
         <div class="left-bar">
             <div class="profile-bar">
-                <h5>Guillermo Diaz</h5>
+                <h5>{{Perfil.first_name}}</h5>
                 <div class="profile-image">
                     <img
                         src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg"
@@ -71,12 +71,21 @@ export default {
               { "title": ""},
               { "author": ""}
             ],
+            Perfil:{},
+            user_id:"",
             
         };
     },
     created() {
         try {
             this.service = new DriversServices();
+            this.user_id=localStorage.getItem('id');
+            this.service.Getdriver(this.user_id).then((response) => {
+              this.Perfil = response.data;
+              console.log(response.data);
+            });
+            
+        
         this.service.GetDriversNews().then((response) => {
             this.news = response.data;
             console.log(response.data);

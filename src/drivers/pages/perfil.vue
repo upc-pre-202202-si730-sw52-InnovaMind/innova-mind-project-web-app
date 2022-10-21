@@ -109,9 +109,10 @@ export default {
         };
     },
     created() {
-        // this.user_id=localStorage.getItem('role');
+        this.user_id=localStorage.getItem('id');
     this.service = new DriversServices();
-    this.service.Getdriver(1).then((response) => {
+    // console.log(user_id);
+    this.service.Getdriver(this.user_id).then((response) => {
       this.Perfil = response.data;
       console.log(response.data);
     });
