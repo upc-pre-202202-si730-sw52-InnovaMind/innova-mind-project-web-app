@@ -8,7 +8,7 @@
   export default {
     data() {},
     created() {},
-    methods: {}
+    methods: {},
 };
 </script>
 
