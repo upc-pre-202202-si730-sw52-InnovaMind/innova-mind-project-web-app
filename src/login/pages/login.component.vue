@@ -105,11 +105,6 @@ export default {
       window.location.href = `https://upc-pre-202202-si730-sw52-innovamind.github.io/`;
     },
     submitForm() {
-      let config = {
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      };
 
       if(this.users.email === '' && this.users.password === '') {
         this.showDialog = true;
@@ -128,15 +123,17 @@ export default {
           if (account.email === this.users.email && account.password === this.users.password) {
             localStorage.setItem('id', account.id);
             localStorage.setItem('email', account.email);
-            localStorage.setItem('email', account.password);
+            localStorage.setItem('password', account.password);
             localStorage.setItem('role', account.role);
             console.log(localStorage.getItem('role'));
             if(account.role === 'driver') {
               this.$router.push("/home-driver");
+              console.log(account);
               return;
             }
             else {
               this.$router.push("/home-company");
+              console.log(account);
               return;
             }
           }
