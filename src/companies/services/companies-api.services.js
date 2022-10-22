@@ -2,6 +2,8 @@ import axios from "axios";
 export class CompaniesServices {
     BaseURL = "http://localhost:3000/companies";
     NewsURL = "http://localhost:3000/company-news";
+    ContactsURL = "http://localhost:3000/contacts";
+    MessagesURL = "http://localhost:3000/messages";
     UsersURL= "http://localhost:3000/users";
     userEmail= "http://localhost:3000/users?email=";
     GetAll() {
@@ -33,5 +35,19 @@ export class CompaniesServices {
     }
     Getcompanie(id) {
         return axios.get(`${this.BaseURL}/${id}`);
+    }
+
+    //////Messages Section /////////
+
+    GetContacts() {
+        return axios.get(this.ContactsURL);
+    }
+
+    GetMessages() {
+        return axios.get(this.MessagesURL);
+    }
+
+    SendMessage(answer) {
+        return axios.post(this.MessagesURL, answer);
     }
 }
