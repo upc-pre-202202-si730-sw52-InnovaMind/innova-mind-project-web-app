@@ -51,6 +51,11 @@ const router = createRouter({
             name: "page-not-found",
             component: PageNotFound,
         }
+        {
+            path: "/apply-for-job",
+            name: "apply-for-job",
+            component: () => import("@/drivers/pages/apply_for_job.vue"),
+        }
     ],
 });
 export default router;
