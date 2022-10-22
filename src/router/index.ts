@@ -3,11 +3,7 @@ import HomeCompany from "@/companies/pages/home_company.vue";
 import AboutView from "@/views/AboutView.vue";
 import LoginComponent from "@/login/pages/login.component.vue";
 import HomeDriver from "@/drivers/pages/home_driver.vue";
-
 import PageNotFound from "@/page-not-found/pages/page-not-found.component.vue";
-import Perfil from "@/drivers/pages/perfil.vue"
-import PerfilCompany from "@/companies/pages/perfil_company.vue"
-
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
@@ -41,20 +37,20 @@ const router = createRouter({
             component: () => import("@/companies/pages/home_company.vue"),
         },
         {
+            path: "/driver-settings",
+            name: "driver-settings",
+            component: () => import("@/drivers/pages/driver_settings.vue"),
+        },
+        {
+            path: "/company-settings",
+            name: "company-settings",
+            component: () => import("@/companies/pages/company_settings.vue"),
+        },
+        {
             path: "/:pathMatch(.*)*",
             name: "page-not-found",
             component: PageNotFound,
-        },
-        {
-            path: "/perfil-driver",
-            name: "perfil-driver",
-            component: () => import("@/drivers/pages/perfil.vue"),
-        },
-        {
-            path: "/perfil-company",
-            name: "perfil-company",
-            component: () => import("@/companies/pages/perfil_company.vue"),
-        },
+        }
     ],
 });
 export default router;
