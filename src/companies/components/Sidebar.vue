@@ -51,10 +51,10 @@
               </router-link>
           </li>
           <li>
-              <div>
-                  <i class="pi pi-sign-out"></i>
-                  <p>Logout</p>
-              </div>
+                <div @click="logout()">
+                    <i class="pi pi-sign-out"></i>
+                    <p>Logout</p>
+                </div>
           </li>
       </ul>
   </div>
@@ -106,10 +106,10 @@
               </div>
           </li>
           <li>
-              <div>
-                  <i class="pi pi-sign-out"></i>
-                  <p>Logout</p>
-              </div>
+              <div @click="logout()">
+                    <i class="pi pi-sign-out"></i>
+                    <p>Logout</p>
+                </div>
           </li>
       </ul>
   </div>
@@ -128,9 +128,13 @@ export default {
       };
   },
   methods: {
-      handleView(){
-          this.mobileView = window.innerWidth <= 768;
-      },
+        handleView(){
+            this.mobileView = window.innerWidth <= 768;
+        },
+        logout(){
+                localStorage.clear();
+                this.$router.push('/login');
+        },
   },
   created() {
       this.handleView();

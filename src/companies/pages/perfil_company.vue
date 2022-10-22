@@ -45,10 +45,7 @@
         <div class="center-bar">
             <div class="profile-bar">
                 <div class="profile-image2">
-                   
-                            <img alt="user header" src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg">
-                    
-
+                    <img alt="user header" src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg">
                 </div>
                 <Card style="width: 100%; margin-top: 2em" v-for="(New, i) in news" :key="i">
                     <template #header>

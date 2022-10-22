@@ -53,7 +53,7 @@
                 </router-link>   
             </li>
             <li>
-                <div>
+                <div @click="logout()">
                     <i class="pi pi-sign-out"></i>
                     <p>Logout</p>
                 </div>
@@ -74,47 +74,49 @@
         </div>
         <ul>
             <li>
-                <div>
-                    <i class="pi pi-home"></i>
-                    <router-link to="/home-driver">Home</router-link>
-                    <!--p>Home</p-->
-                </div>
-            </li>
-            <li>
-              <div>
-                <i class="pi pi-search"></i>
-                <router-link to="/apply-for-job">Apply for job</router-link>
-                <!--p>Apply for job</p-->
-              </div>
-            </li>
-            <li>
-                <div>
-                    <i class="pi pi-comments"></i>
-                    <p>Messages</p>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <i class="pi pi-bell"></i>
-                    <p>Notifications</p>
-                </div>
-            </li>
-            <li>
-                <router-link to="/perfil-driver" style="text-decoration: none;">
+                <router-link to="/driver/home" style="text-decoration: none;">
                     <div>
-                    <i class="pi pi-user"></i>
-                    <p>Profile</p>
-                </div>
+                        <i class="pi pi-home"></i>
+                        <p>Home</p>
+                    </div>
                 </router-link>
             </li>
             <li>
-                <div>
+                <router-link to="/driver/messages" style="text-decoration: none;">
+                    <div>
+                        <i class="pi pi-comments"></i>
+                        <p>Messages</p>
+                    </div>
+                </router-link>
+                
+            </li>
+            <li>                
+                <router-link to="/driver/notifications" style="text-decoration: none;">
+                    <div>
+                        <i class="pi pi-bell"></i>
+                        <p>Notifications</p>
+                    </div>
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/driver/profile" style="text-decoration: none;">
+                    <div>
+                    <i class="pi pi-user"></i>
+                    <p>Profile</p>
+                    </div>
+                </router-link>
+                
+            </li>
+            <li>
+                <router-link to="/driver/settings" style="text-decoration: none;">
+                    <div>
                     <i class="pi pi-sliders-h"></i>
                     <p>Settings</p>
                 </div>
+                </router-link>   
             </li>
             <li>
-                <div>
+                <div @click="logout()">
                     <i class="pi pi-sign-out"></i>
                     <p>Logout</p>
                 </div>
@@ -139,6 +141,10 @@ export default {
         handleView(){
             this.mobileView = window.innerWidth <= 768;
         },
+        logout(){
+            localStorage.clear();
+            this.$router.push('/login');
+        },
     },
     created() {
         this.handleView();
@@ -147,7 +153,6 @@ export default {
     mounted() {
         window.addEventListener('resize', this.handleView);
     },
-    
     
   
 };

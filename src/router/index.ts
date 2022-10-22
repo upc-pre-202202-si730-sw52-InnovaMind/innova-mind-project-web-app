@@ -74,7 +74,7 @@ const router = createRouter({
                 },
                 {
                     path: "profile",
-                    name: "ProfileCompany",
+                    name: "ProfileDriver",
                     component: () => import("@/drivers/pages/perfil.vue"),
                 },        
                 {

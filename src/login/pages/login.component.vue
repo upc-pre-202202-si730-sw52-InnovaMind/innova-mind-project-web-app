@@ -70,18 +70,18 @@ export default {
       console.log(this.accounts);
     });
   },
-  /* mounted() {
+  mounted() {
     if(localStorage.getItem('id')) {
       if(localStorage.getItem('role') === 'driver') {
-        this.$router.push('/driver');
+        this.$router.push('/driver/home');
       } else {
-        this.$router.push('/company');
+        this.$router.push('/company/home');
       }
     }
     else{
       this.$router.push('/login');
     }
-  }, */
+  },
   setup() {
     const state = reactive({
       users: {
