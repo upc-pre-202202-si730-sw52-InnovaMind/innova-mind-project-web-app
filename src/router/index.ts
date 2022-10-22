@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeCompany from "@/companies/pages/home_company.vue";
-import AboutView from "@/views/AboutView.vue";
 import LoginComponent from "@/login/pages/login.component.vue";
-import HomeDriver from "@/drivers/pages/home_driver.vue";
 import PageNotFound from "@/page-not-found/pages/page-not-found.component.vue";
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,76 +19,71 @@ const router = createRouter({
             component: () => import("@/views/RegisterView.vue"),
         },
         {
-            path: "/about",
-            name: "about",
-            component: () => import("@/views/AboutView.vue"),
-        },
-        /* Drivers routing */
-        {
-            path: "/driver",
-            name: "driver",
-            component: () => import("@/views/DriverView.vue"),
-            children:[
-                {
-                    path: "home",
-                    name: "home",
-                    component: () => import("@/drivers/pages/home_driver.vue"),
-                },
-                {
-                    path: "messages",
-                    name: "messages",
-                    component: () => import("@/drivers/pages/messages_driver.vue"),
-                }
-            ],
-        },
+            path: "/:pathMatch(.*)*",
+            name: "page-not-found",
+            component: PageNotFound,
+        },               
         /* Companies routing */
         {
             path: "/company",
-            name: "company",
+            name: "Company",
             component: () => import("@/views/CompanyView.vue"),
             children:[
                 {
                     path: "home",
-                    name: "home",
+                    name: "HomeCompany",
                     component: () => import("@/companies/pages/home_company.vue"),
                 },
                 {
                     path: "messages",
-                    name: "messages",
+                    name: "MessagesCompany",
                     component: () => import("@/companies/pages/messages_company.vue"),
-                }
+                },
+                {
+                    path: "profile",
+                    name: "ProfileCompany",
+                    component: () => import("@/companies/pages/perfil_company.vue"),
+                },
+                {
+                    path: "settings",
+                    name: "SettingsCompany",
+                    component: () => import("@/companies/pages/company_settings.vue"),
+                },
             ],
         },
+        /* Drivers routing */
         {
-            path: "/home-driver",
-            name: "home-driver",
-            component: () => import("@/drivers/pages/home_driver.vue"),
-        },
-        {
-            path: "/home-company",
-            name: "home-company",
-            component: () => import("@/companies/pages/home_company.vue"),
-        },
-        {
-            path: "/driver-settings",
-            name: "driver-settings",
-            component: () => import("@/drivers/pages/driver_settings.vue"),
-        },
-        {
-            path: "/company-settings",
-            name: "company-settings",
-            component: () => import("@/companies/pages/company_settings.vue"),
-        },
-        {
-            path: "/:pathMatch(.*)*",
-            name: "page-not-found",
-            component: PageNotFound,
-        }
-        {
-            path: "/apply-for-job",
-            name: "apply-for-job",
-            component: () => import("@/drivers/pages/apply_for_job.vue"),
-        }
+            path: "/driver",
+            name: "Driver",
+            component: () => import("@/views/DriverView.vue"),
+            children: [
+                {
+                    path: "home",
+                    name: "HomeDriver",
+                    component: () => import("@/drivers/pages/home_driver.vue"),
+                },
+                {
+                    path: "messages",
+                    name: "MessagesDriver",
+                    component: () => import("@/drivers/pages/messages_driver.vue"),
+                },
+                {
+                    path: "settings",
+                    name: "SettingsDriver",
+                    component: () => import("@/drivers/pages/driver_settings.vue"),
+                },
+                {
+                    path: "profile",
+                    name: "ProfileCompany",
+                    component: () => import("@/drivers/pages/perfil.vue"),
+                },        
+                {
+                    path: "apply",
+                    name: "Apply",
+                    component: () => import("@/drivers/pages/apply_for_job.vue"),
+                }
+            ]
+        },         
     ],
 });
 export default router;

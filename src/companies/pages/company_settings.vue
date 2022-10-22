@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <Sidebar/>
     <pv-card class="main">
 
       <template #title>Settings</template>

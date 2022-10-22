@@ -70,21 +70,18 @@ export default {
       console.log(this.accounts);
     });
   },
-  mounted() {
+  /* mounted() {
     if(localStorage.getItem('id')) {
       if(localStorage.getItem('role') === 'driver') {
-        this.$router.push('/home-driver');
-        alert("The method mounted is executed in home driver");
+        this.$router.push('/driver');
       } else {
-        this.$router.push('/home-company');
-        alert("The method mounted is executed in home company");
+        this.$router.push('/company');
       }
     }
     else{
       this.$router.push('/login');
-      alert("The method mounted is executed to login");
     }
-  },
+  }, */
   setup() {
     const state = reactive({
       users: {
@@ -146,12 +143,12 @@ export default {
             localStorage.setItem('role', account.role);
             console.log(localStorage.getItem('role'));
             if(account.role === 'driver') {
-              this.$router.push("/home-driver");
+              this.$router.push("/driver");
               console.log(account);
               return;
             }
             else {
-              this.$router.push("/home-company");
+              this.$router.push("/company/home");
               console.log(account);
               return;
             }

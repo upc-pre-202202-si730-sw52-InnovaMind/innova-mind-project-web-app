@@ -11,7 +11,7 @@
       </div>
       <ul>
           <li>
-              <router-link to="/home-company" style="text-decoration: none;">
+              <router-link to="/company/home" style="text-decoration: none;">
                   <div>
                       <i class="pi pi-home"></i>
                       <p>Home</p>
@@ -19,7 +19,7 @@
               </router-link>
           </li>
           <li>
-              <router-link to="" style="text-decoration: none;">
+              <router-link to="/company/messages" style="text-decoration: none;">
                   <div>
                       <i class="pi pi-comments"></i>
                       <p>Messages</p>
@@ -34,7 +34,7 @@
               </div>
           </li>
           <li>
-              <router-link to="/perfil-company" style="text-decoration: none;">
+              <router-link to="/company/profile" style="text-decoration: none;">
                   <div>
                   <i class="pi pi-user"></i>
                   <p>Profile</p>
@@ -43,10 +43,12 @@
               
           </li>
           <li>
+            <router-link to="/company/settings" style="text-decoration: none;">                  
               <div>
                   <i class="pi pi-sliders-h"></i>
                   <p>Settings</p>
               </div>
+              </router-link>
           </li>
           <li>
               <div>

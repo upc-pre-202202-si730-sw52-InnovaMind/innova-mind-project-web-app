@@ -11,7 +11,7 @@
         </div>
         <ul>
             <li>
-                <router-link to="/home-driver" style="text-decoration: none;">
+                <router-link to="/driver/home" style="text-decoration: none;">
                     <div>
                         <i class="pi pi-home"></i>
                         <p>Home</p>
@@ -19,7 +19,7 @@
                 </router-link>
             </li>
             <li>
-                <router-link to="" style="text-decoration: none;">
+                <router-link to="/driver/messages" style="text-decoration: none;">
                     <div>
                         <i class="pi pi-comments"></i>
                         <p>Messages</p>
@@ -27,14 +27,16 @@
                 </router-link>
                 
             </li>
-            <li>
-                <div>
-                    <i class="pi pi-bell"></i>
-                    <p>Notifications</p>
-                </div>
+            <li>                
+                <router-link to="/driver/notifications" style="text-decoration: none;">
+                    <div>
+                        <i class="pi pi-bell"></i>
+                        <p>Notifications</p>
+                    </div>
+                </router-link>
             </li>
             <li>
-                <router-link to="/perfil-driver" style="text-decoration: none;">
+                <router-link to="/driver/profile" style="text-decoration: none;">
                     <div>
                     <i class="pi pi-user"></i>
                     <p>Profile</p>
@@ -43,10 +45,12 @@
                 
             </li>
             <li>
-                <div>
+                <router-link to="/driver/settings" style="text-decoration: none;">
+                    <div>
                     <i class="pi pi-sliders-h"></i>
                     <p>Settings</p>
                 </div>
+                </router-link>   
             </li>
             <li>
                 <div>

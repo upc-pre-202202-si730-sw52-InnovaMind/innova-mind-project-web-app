@@ -1,7 +1,6 @@
 
 <template>
-    <div class="home">
-        <Sidebar />
+    <div class="home">        
         <div>
             <div class="w-full">
                 

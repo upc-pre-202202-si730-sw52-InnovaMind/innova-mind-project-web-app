@@ -30,7 +30,6 @@ import Password from "primevue/password";
 import ScrollPanel from 'primevue/scrollpanel';
 import Avatar from 'primevue/avatar';
 import Badge from 'primevue/badge';
-import DropDown from "primevue/dropdown";
 
 const app = createApp(App);
 app.use(router);
@@ -60,6 +59,5 @@ app.component("pv-password", Password);
 app.component("pv-scroll-panel", ScrollPanel);
 app.component("pv-avatar", Avatar);
 app.component("pv-badge", Badge);
-app.component("pv-dropdown", DropDown);
 
 app.mount("#app");

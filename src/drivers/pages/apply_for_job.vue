@@ -1,7 +1,5 @@
 <template>
   <div class="apply-for-job">
-    <Sidebar />
-
     <div class="main-forms">
       <pv-card id="top-bar">
         <template #title >Please specify the items</template>
