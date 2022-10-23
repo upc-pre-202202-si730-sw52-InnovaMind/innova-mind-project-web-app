@@ -143,7 +143,7 @@ export default {
             localStorage.setItem('role', account.role);
             console.log(localStorage.getItem('role'));
             if(account.role === 'driver') {
-              this.$router.push("/driver");
+              this.$router.push("/driver/home");
               console.log(account);
               return;
             }

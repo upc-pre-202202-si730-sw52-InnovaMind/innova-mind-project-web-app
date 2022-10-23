@@ -4,7 +4,7 @@
         <div class="logo">
             <img
                 class="logo-image"
-                src="src/assets/images/logoZenDriver.png"
+                src="https://github.com/upc-pre-202202-si730-sw52-InnovaMind/innova-mind-project-web-app/blob/main/src/assets/images/logoZenDriver.png"
                 alt="ZenDriver's logo"
             />
             <p class="logo-text">ZenDriver</p>
@@ -67,7 +67,7 @@
             
             <img
                 class="logo-image"
-                src="src/assets/images/logoZenDriver.png"
+                src="https://github.com/upc-pre-202202-si730-sw52-InnovaMind/innova-mind-project-web-app/blob/main/src/assets/images/logoZenDriver.png"
                 alt="ZenDriver's logo"
             />
             <p class="logo-text">ZenDriver</p>
@@ -125,7 +125,7 @@
     </div>
     
 </template>
-<script lang="ts">
+<script lang="js">
 import "primeicons/primeicons.css";
 
 export default {

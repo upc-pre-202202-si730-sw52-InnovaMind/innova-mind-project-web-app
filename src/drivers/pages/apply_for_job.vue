@@ -31,7 +31,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import "primeicons/primeicons.css";
 import Sidebar from "../components/Sidebar.vue";
 import { CompaniesServices  } from "/src/companies/services/companies-api.services";

@@ -40,7 +40,7 @@
     </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import { DriversServices } from "../services/drivers-api.services";
 
 export default {

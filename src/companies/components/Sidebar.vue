@@ -4,7 +4,7 @@
       <div class="logo">
           <img
               class="logo-image"
-              src="src/assets/images/logoZenDriver.png"
+              src="https://github.com/upc-pre-202202-si730-sw52-InnovaMind/innova-mind-project-web-app/blob/main/src/assets/images/logoZenDriver.png"
               alt="ZenDriver's logo"
           />
           <p class="logo-text">ZenDriver</p>
@@ -28,10 +28,12 @@
               
           </li>
           <li>
-              <div>
-                  <i class="pi pi-bell"></i>
-                  <p>Notifications</p>
+            <router-link to="/company/notifications" style="text-decoration: none;">
+                  <div>
+                    <i class="pi pi-bell"></i>
+                    <p>Notifications</p>
               </div>
+              </router-link>              
           </li>
           <li>
               <router-link to="/company/profile" style="text-decoration: none;">
@@ -65,7 +67,7 @@
           
           <img
               class="logo-image"
-              src="src/assets/images/logoZenDriver.png"
+              src="https://github.com/upc-pre-202202-si730-sw52-InnovaMind/innova-mind-project-web-app/blob/main/src/assets/images/logoZenDriver.png"
               alt="ZenDriver's logo"
           />
           <p class="logo-text">ZenDriver</p>
@@ -115,7 +117,7 @@
   </div>
   
 </template>
-<script lang="ts">
+<script lang="js">
 import "primeicons/primeicons.css";
 
 export default {
