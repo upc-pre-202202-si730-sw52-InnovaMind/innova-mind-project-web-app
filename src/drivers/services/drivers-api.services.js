@@ -6,6 +6,8 @@ export class DriversServices {
     MessagesURL = "http://localhost:3000/messages";
     UsersURL= "http://localhost:3000/users";
     JobsURL = "http://localhost:3000/jobsdrivers";
+    NotificationsURL = 'http://localhost:3000/notifications-drivers';
+
     GetAll() {
         return axios.get(this.BaseURL);
     }
@@ -53,5 +55,10 @@ export class DriversServices {
 
     SendMessage(answer){
         return axios.post(this.MessagesURL, answer)
+    }
+    //////Notifications Section /////////
+
+    GetNotifications() {
+        return axios.get(this.NotificationsURL);
     }
 }

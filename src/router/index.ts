@@ -49,6 +49,11 @@ const router = createRouter({
                     name: "SettingsCompany",
                     component: () => import("@/companies/pages/company_settings.vue"),
                 },
+                {
+                    path: "notifications",
+                    name: "NotificationsCompany",
+                    component: () => import("@/companies/pages/notifications-company.vue"),
+                },
             ],
         },
         /* Drivers routing */
@@ -81,7 +86,12 @@ const router = createRouter({
                     path: "apply",
                     name: "Apply",
                     component: () => import("@/drivers/pages/apply_for_job.vue"),
-                }
+                },
+                {
+                    path: "notifications",
+                    name: "NotificationsDriver",
+                    component: () => import("@/drivers/pages/notifications-driver.vue"),
+                },
             ]
         },         
     ],

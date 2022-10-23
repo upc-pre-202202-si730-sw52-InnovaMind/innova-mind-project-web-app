@@ -6,6 +6,7 @@ export class CompaniesServices {
     MessagesURL = "http://localhost:3000/messages";
     UsersURL= "http://localhost:3000/users";
     userEmail= "http://localhost:3000/users?email=";
+    NotificationsURL = 'http://localhost:3000/notifications-companies';
     GetAll() {
         return axios.get(this.BaseURL);
     }
@@ -49,5 +50,11 @@ export class CompaniesServices {
 
     SendMessage(answer) {
         return axios.post(this.MessagesURL, answer);
+    }
+
+    //////Notifications Section /////////
+
+    GetNotifications() {
+        return axios.get(this.NotificationsURL);
     }
 }
