@@ -1,12 +1,12 @@
 import axios from "axios";
 export class DriversServices {
-    BaseURL = "http://localhost:3000/drivers";
-    NewsURL = "http://localhost:3000/driver-news";
-    ContactsURL = "http://localhost:3000/contacts";
-    MessagesURL = "http://localhost:3000/messages";
-    UsersURL= "http://localhost:3000/users";
-    JobsURL = "http://localhost:3000/jobsdrivers";
-    NotificationsURL = 'http://localhost:3000/notifications-drivers';
+    BaseURL = "http://20.83.177.159:3000/drivers";
+    NewsURL = "http://20.83.177.159:3000/driver-news";
+    ContactsURL = "http://20.83.177.159:3000/contacts";
+    MessagesURL = "http://20.83.177.159:3000/messages";
+    UsersURL= "http://20.83.177.159:3000/users";
+    JobsURL = "http://20.83.177.159:3000/jobsdrivers";
+    NotificationsURL = 'http://20.83.177.159:3000/notifications-drivers';
 
     GetAll() {
         return axios.get(this.BaseURL);

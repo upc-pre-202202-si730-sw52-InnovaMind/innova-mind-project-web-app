@@ -60,6 +60,7 @@ export default {
       ShowErrorEmail: false,
       showErrorPassword: false,
       flag: false,
+      logged: false,
     }
   },
 
@@ -142,6 +143,7 @@ export default {
             localStorage.setItem('password', account.password);
             localStorage.setItem('role', account.role);
             console.log(localStorage.getItem('role'));
+            this.logged = true;
             if(account.role === 'driver') {
               this.$router.push("/driver/home");
               console.log(account);
@@ -153,10 +155,9 @@ export default {
               return;
             }
           }
-          else {
-            this.showDialog = true;
-          }
-        })
+        });
+        if(!this.logged)
+          this.showDialog = true;
       }
     },
     cancel() {

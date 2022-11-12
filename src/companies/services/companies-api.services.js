@@ -1,12 +1,12 @@
 import axios from "axios";
 export class CompaniesServices {
-    BaseURL = "http://localhost:3000/companies";
-    NewsURL = "http://localhost:3000/company-news";
-    ContactsURL = "http://localhost:3000/contacts";
-    MessagesURL = "http://localhost:3000/messages";
-    UsersURL= "http://localhost:3000/users";
-    userEmail= "http://localhost:3000/users?email=";
-    NotificationsURL = 'http://localhost:3000/notifications-companies';
+    BaseURL = "http://20.83.177.159:3000/companies";
+    NewsURL = "http://20.83.177.159:3000/company-news";
+    ContactsURL = "http://20.83.177.159:3000/contacts";
+    MessagesURL = "http://20.83.177.159:3000/messages";
+    UsersURL= "http://20.83.177.159:3000/users";
+    userEmail= "http://20.83.177.159:3000/users?email=";
+    NotificationsURL = 'http://20.83.177.159:3000/notifications-companies';
     GetAll() {
         return axios.get(this.BaseURL);
     }

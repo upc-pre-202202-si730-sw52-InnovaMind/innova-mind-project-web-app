@@ -257,7 +257,6 @@ export default {
         }
         else {
           this.registered = false;
-          break;
         }
       }
     },
