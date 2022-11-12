@@ -11,7 +11,7 @@
                 <h5>Henry Turrones</h5>
                 <div class="profile-image">
                     <img
-                        src="https://github.com/upc-pre-202202-si730-sw52-InnovaMind/innova-mind-project-web-app/blob/main/src/assets/images/HenryTurrones.jpg"
+                        src="https://raw.githubusercontent.com/upc-pre-202202-si730-sw52-InnovaMind/innova-mind-project-web-app/main/src/assets/images/HenryTurrones.jpg"
                         alt="Recruiter's profile photo"
                     />
                 </div>

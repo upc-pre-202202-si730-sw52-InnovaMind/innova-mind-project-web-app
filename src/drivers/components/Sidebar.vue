@@ -204,7 +204,13 @@ export default {
     margin-bottom: 0px;
     align-items: center;
 }
+.logo i{
+  position: absolute;
+  z-index: 2000;
+  color: #000;
+  left: 10px;
 
+}
 .logo-text {
     font-size: 1.5rem;
     font-weight: 600;
