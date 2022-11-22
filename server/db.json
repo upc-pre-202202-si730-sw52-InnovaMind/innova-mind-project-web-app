@@ -1,275 +1,211 @@
 {
-    "messages": [
-        {
-            "id": 1,
-            "type": "comp",
-            "message": "Hello, I want you work in my company"
-        },
-        {
-            "id": 2,
-            "type": "dev",
-            "message": "I want a new job. So I'm in"
-        },
-        {
-            "id": 3,
-            "type": "comp",
-            "message": "Perfect. Have a great day"
-        },
-        {
-            "id": 4,
-            "type": "dev",
-            "message": "Thanks for the job"
-        },
-        {
-            "id": 5,
-            "type": "dev",
-            "message": "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum."
-        }
-    ],
-    "contacts": [
-        {
-            "id": 1,
-            "full_name": "Elset MacNess",
-            "company": "Photojam",
-            "last_message": "I'll waiting for your answer"
-        },
-        {
-            "id": 2,
-            "full_name": "Anthony Tesmond",
-            "company": "Yodel",
-            "last_message": "I'll waiting for your answer"
-        },
-        {
-            "id": 3,
-            "full_name": "Filbert Doldon",
-            "company": "Yabox",
-            "last_message": "I'll waiting for your answer"
-        },
-        {
-            "id": 4,
-            "full_name": "Marlane Garnall",
-            "company": "Photobug",
-            "last_message": "I'll waiting for your answer"
-        },
-        {
-            "id": 5,
-            "full_name": "Nap McOwen",
-            "company": "Wordware",
-            "last_message": "I'll waiting for your answer"
-        },
-        {
-            "id": 6,
-            "full_name": "Patrizius Jamot",
-            "company": "Leexo",
-            "last_message": "I'll waiting for your answer"
-        },
-        {
-            "id": 7,
-            "full_name": "Warden Calltone",
-            "company": "Agivu",
-            "last_message": "I'll waiting for your answer"
-        },
-        {
-            "id": 8,
-            "full_name": "Javier Challen",
-            "company": "Meemm",
-            "last_message": "I'll waiting for your answer"
-        },
-        {
-            "id": 9,
-            "full_name": "Adams Devote",
-            "company": "Photospace",
-            "last_message": "I'll waiting for your answer"
-        },
-        {
-            "id": 10,
-            "full_name": "Aurthur Sinderson",
-            "company": "Topiclounge",
-            "last_message": "I'll waiting for your answer"
-        }
-    ],
-    "drivers": [
-        {
-            "first_name": "Jason",
-            "last_name": "Webb",
-            "phone": "986427184",
-            "email": "saliw74248@zfobo.com",
-            "password": "123456789",
-            "license": "A-IIIc",
-            "country": "Peru",
-            "region": "Lima",
-            "id": 1
-        },
-        {
-            "first_name": "Brandon",
-            "last_name": "Webb",
-            "phone": "946786489",
-            "email": "eo4hlg.dp0evxa52@khig.site",
-            "password": "123456789",
-            "license": "A-I",
-            "country": "Chile",
-            "region": "Santiago",
-            "id": 2
-        },
-        {
-            "first_name": "Thorn",
-            "last_name": "Ambrozik",
-            "phone": "926922875",
-            "email": "bmacinherney1@dedecms.com",
-            "password": "123456789",
-            "license": "A-IIa",
-            "country": "Peru",
-            "region": "Lima",
-            "id": 3
-        },
-        {
-            "first_name": "edfggfd",
-            "last_name": "fdgdfdfg",
-            "phone": "dgfdfg",
-            "email": "dg",
-            "password": "dfgd",
-            "license": "A-IIa",
-            "country": "gdgdfg",
-            "region": "dfgdfg",
-            "id": 4
-        }
-    ],
-    "companies": [
-        {
-            "ruc": "15345345",
-            "id": 1,
-            "first_name": "adad",
-            "last_name": "asdasd",
-            "phone": "345345",
-            "email": "asdas",
-            "password": "dasd",
-            "name": "fssfd",
-            "region": "vcxbcvx",
-            "city": "vxxcvx",
-            "state": "xcvxcv",
-            "address": "xvcxvxcv"
-        },
-        {
-            "first_name": "Roberto",
-            "last_name": "Sanchez",
-            "phone": "983456723",
-            "email": "ronalsanchez0192@gmail.com",
-            "password": "admin123",
-            "name": "Oltursa",
-            "ruc": "10202932123",
-            "region": "Callao",
-            "city": "Callao",
-            "state": "Callao",
-            "address": "Callao ",
-            "id": 2
-        },
-        {
-            "first_name": "Roberto",
-            "last_name": "Sanchez",
-            "phone": "983456723",
-            "email": "ronalsanchez0192@gmail.com",
-            "password": "admin123",
-            "name": "Oltursa",
-            "ruc": "10202932123",
-            "region": "Callao",
-            "city": "Callao",
-            "state": "Callao",
-            "address": "Callao ",
-            "id": 3
-        },
-        {
-            "first_name": "Roberto",
-            "last_name": "Sanchez",
-            "phone": "983456723",
-            "email": "ronalsanchez0192@gmail.com",
-            "password": "admin123",
-            "name": "Oltursa",
-            "ruc": "10202932123",
-            "region": "Callao",
-            "city": "Callao",
-            "state": "Callao",
-            "address": "Callao ",
-            "id": 4
-        },
-        {
-            "first_name": "Roberto",
-            "last_name": "Sanchez",
-            "phone": "983456723",
-            "email": "ronalsanchez0192@gmail.com",
-            "password": "admin123",
-            "name": "Oltursa",
-            "ruc": "10202932123",
-            "region": "Callao",
-            "city": "Callao",
-            "state": "Callao",
-            "address": "Callao ",
-            "id": 5
-        },
-        {
-            "first_name": "Roberto",
-            "last_name": "Sanchez",
-            "phone": "983456723",
-            "email": "ronalsanchez0192@gmail.com",
-            "password": "admin123",
-            "name": "Oltursa",
-            "ruc": "10202932123",
-            "region": "Callao",
-            "city": "Callao",
-            "state": "Callao",
-            "address": "Callao ",
-            "id": 6
-        }
-    ],
-    "driver-news": [
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        },
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        },
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        },
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        },
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        },
-        {
-            "author": "Henry Turrones",
-            "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
-            "title": "Need a AIIIC driver",
-            "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
-        }
-    ],
-    "company-news": [
-        {
-            "author": "Ministerio de transportes y comunicaciones",
-            "photo": "https://larepublica.pe/resizer/aQWTniujXjtYelH7dKf0LXBbjgs=/538x0/top/larepublica.pe/resizer/ZxqT-YOmErnSkIrhOGb2dHHKYb0=/538x0/top/smart/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/SHTRLBFOWFG23IA534TY7NADQ4.png",
-            "title": "News rules for transport",
-            "description": "Today the Ministry of Transport have approved the news rules for the transport business."
-        },
-        {
-            "author": "Andina",
-            "photo": "https://portal.andina.pe/EDPfotografia3/Thumbnail/2022/09/30/000902157W.jpg",
-            "title": "Construction begins on the Huactahuaru tunnel that will join the Ancash and Huánuco regions",
-            "description": "Provías Nacional began construction of the Huactahuaru tunnel, which is located at kilometer 144 of section III of the Huánuco-La Unión-Huallanca highway, which will join the regions of Huánuco and Áncash, reported the Ministry of Transport and Communications (MTC)."
-        }
-    ]
+  "drivers": [
+    {
+      "first_name": "Jason",
+      "last_name": "Webb",
+      "phone": "986427184",
+      "email": "saliw74248@zfobo.com",
+      "password": "123456789",
+      "license": "A-IIIc",
+      "country": "Peru",
+      "region": "Lima",
+      "id": 1
+    },
+    {
+      "first_name": "Brandon",
+      "last_name": "Webb",
+      "phone": "946786489",
+      "email": "eo4hlg.dp0evxa52@khig.site",
+      "password": "123456789",
+      "license": "A-I",
+      "country": "Chile",
+      "region": "Santiago",
+      "id": 2
+    },
+    {
+      "id": 4,
+      "first_name": "Abel Angel",
+      "last_name": "Cierto Espiritu",
+      "phone": "920202029",
+      "email": "u20201b561@upc.edu.pe",
+      "password": "123",
+      "license": "A-IIIa",
+      "country": "Perú",
+      "region": "Ucayali"
+    }
+  ],
+  "companies": [
+    {
+      "first_name": "Roberto",
+      "last_name": "Sanchez",
+      "phone": "983456723",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "name": "Oltursa",
+      "ruc": "10202932123",
+      "region": "Callao",
+      "city": "Callao",
+      "state": "Callao",
+      "address": "Callao ",
+      "id": 3
+    },
+    {
+      "ruc": "12",
+      "id": 5,
+      "first_name": "Jose",
+      "last_name": "Artemio",
+      "phone": "123456789",
+      "email": "jose@gmail.com",
+      "password": "12345",
+      "name": "Sam",
+      "region": "Auca",
+      "city": "Tingo",
+      "state": "Peru",
+      "address": "Leche vinagre"
+    },
+    {
+      "ruc": "1",
+      "id": 6,
+      "first_name": "Juan",
+      "last_name": "Guerra",
+      "phone": "234567891",
+      "email": "juan@gmail.com",
+      "password": "a",
+      "name": "x",
+      "region": "peru",
+      "city": "peru",
+      "state": "peru",
+      "address": "peru"
+    },
+    {
+      "ruc": "sdgfgf",
+      "id": 7,
+      "first_name": "dsgfdsfg",
+      "last_name": "sdfgdfg",
+      "phone": "sdfgsdfg",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "123",
+      "name": "sdfggdf",
+      "region": "sdfgdfdgsf",
+      "city": "dfsg",
+      "state": "sdfggsdf",
+      "address": "sgdfsgdf"
+    },
+    {
+      "ruc": "ADSF",
+      "id": 8,
+      "first_name": "ADSFDSF",
+      "last_name": "ASDFADS",
+      "phone": "ADSFASDF",
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "123",
+      "name": "ADSF",
+      "region": "ADSF",
+      "city": "FDSA",
+      "state": "ASDF",
+      "address": "ASDF"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "saliw74248@zfobo.com",
+      "password": "123456789",
+      "role": "driver"
+    },
+    {
+      "id": 2,
+      "email": "eo4hlg.dp0evxa52@khig.site",
+      "password": "123456789",
+      "role": "driver"
+    },
+    {
+      "id": 3,
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "admin123",
+      "role": "company"
+    },
+    {
+      "id": 4,
+      "email": "u20201b561@upc.edu.pe",
+      "password": "123",
+      "role": "driver"
+    },
+    {
+      "id": 5,
+      "email": "jose@gmail.com",
+      "password": "12345",
+      "role": "company"
+    },
+    {
+      "id": 6,
+      "email": "juan@gmail.com",
+      "password": "a",
+      "role": "company"
+    },
+    {
+      "id": 7,
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "123",
+      "role": "company"
+    },
+    {
+      "id": 8,
+      "email": "ronalsanchez0192@gmail.com",
+      "password": "123",
+      "role": "company"
+    }
+  ],
+  "driver-news": [
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    },
+    {
+      "author": "Henry Turrones",
+      "photo": "https://www.smart-trucking.com/wp-content/uploads/2021/05/new-truck-driver-career-1.jpeg",
+      "title": "Need a AIIIC driver",
+      "description": "Maconso S.A.C is finding a driver with AIIIC licence. The work is transport charge from Lima to Piura."
+    }
+  ],
+  "company-news": [
+    {
+      "author": "Ministerio de transportes y comunicaciones",
+      "photo": "https://larepublica.pe/resizer/aQWTniujXjtYelH7dKf0LXBbjgs=/538x0/top/larepublica.pe/resizer/ZxqT-YOmErnSkIrhOGb2dHHKYb0=/538x0/top/smart/cloudfront-us-east-1.images.arcpublishing.com/gruporepublica/SHTRLBFOWFG23IA534TY7NADQ4.png",
+      "title": "News rules for transport",
+      "description": "Today the Ministry of Transport have approved the news rules for the transport business."
+    },
+    {
+      "author": "Andina",
+      "photo": "https://portal.andina.pe/EDPfotografia3/Thumbnail/2022/09/30/000902157W.jpg",
+      "title": "Construction begins on the Huactahuaru tunnel that will join the Ancash and Huánuco regions",
+      "description": "Provías Nacional began construction of the Huactahuaru tunnel, which is located at kilometer 144 of section III of the Huánuco-La Unión-Huallanca highway, which will join the regions of Huánuco and Áncash, reported the Ministry of Transport and Communications (MTC)."
+    }
+  ]
 }
