@@ -9,12 +9,12 @@
     <pv-card class="card">
       <template #content>
         <span class="p-float-label">
-          <pv-input-text class="p-input" v-model="users.email" type="text" placeholder="Email" :disabled="flag"/>
-          <span v-if="!users.email" class="p-error">Email is required.</span>
+          <pv-input-text class="p-input" v-model="user.email" type="text" placeholder="Email" :disabled="flag"/>
+          <span v-if="!user.email" class="p-error">Email is required.</span>
         </span>
         <span class="p-float-label">
-          <pv-input-text class="p-input" v-model="users.password" type="password" placeholder="Password" :disabled="flag"/>
-          <span v-if="!users.password" class="p-error">Password is required.</span>
+          <pv-input-text class="p-input" v-model="user.password" type="password" placeholder="Password" :disabled="flag"/>
+          <span v-if="!user.password" class="p-error">Password is required.</span>
         </span>
         <pv-button @click="submitForm" class="p-button-raised button"  icon="mr-2 mb-2" label="Log In" :isabled="flag"></pv-button>
         <router-link id="router" to="/forgot-password" class="p-button-label">Forgot password?</router-link>
@@ -51,10 +51,17 @@ export default {
     return {
       v$: useValidate(),
       submitted: false,
-      accounts:[],
-      users: {
+      user: {
         email: '',
         password: '',
+      },
+      account: {
+        id: '',
+        firstName: '',
+        lastName: '',
+        username: '',
+        token: '',
+        role: '',
       },
       showDialog: false,
       ShowErrorEmail: false,
@@ -66,10 +73,6 @@ export default {
 
   created() {
     this.service = new loginApiService();
-    this.service.getUsers().then((response) => {
-      this.accounts = response.data;
-      console.log(this.accounts);
-    });
   },
   mounted() {
     if(localStorage.getItem('id')) {
@@ -85,14 +88,14 @@ export default {
   },
   setup() {
     const state = reactive({
-      users: {
+      user: {
         email: '',
         password: ''
       }
     })
     const rules = computed(() => {
       return {
-        users: {
+        user: {
           email: {
             required,
             email
@@ -117,61 +120,56 @@ export default {
     landingPage() {
       window.location.href = `https://upc-pre-202202-si730-sw52-innovamind.github.io/`;
     },
+
     submitForm() {
       let config = {
         headers: {
           'Content-Type': 'application/json',
         }
       }
-      if(this.users.email === '' && this.users.password === '') {
+      if(this.user.email === '' && this.user.password === '') {
         this.showDialog = true;
         this.flag = true;
       }
-      else if(this.users.email !== '' && this.users.password === '') {
+      else if(this.user.email !== '' && this.user.password === '') {
         this.showErrorPassword = true;
         this.flag = true;
       }
-      else if(this.users.password !== '' && this.users.email === '') {
+      else if(this.user.password !== '' && this.user.email === '') {
         this.ShowErrorEmail = true;
         this.flag = true;
       }
       else {
-        this.accounts.forEach((account) => {
-          if (account.email === this.users.email && account.password === this.users.password) {
-            localStorage.setItem('id', account.id);
-            localStorage.setItem('email', account.email);
-            localStorage.setItem('password', account.password);
-            localStorage.setItem('role', account.role);
-            console.log(localStorage.getItem('role'));
-            this.logged = true;
-            if(account.role === 'driver') {
-              this.$router.push("/driver/home");
-              console.log(account);
-              return;
-            }
-            else {
-              this.$router.push("/company/home");
-              console.log(account);
-              return;
-            }
-          }
+        let UserRequest = {
+          username: this.user.email,
+          password: this.user.password
+        }
+        this.service.getUser(UserRequest).then(response=> {
+          this.account = response.data;
+          console.log(response.data);
+          localStorage.setItem('id', this.account.id);
+          localStorage.setItem('role', this.account.role);
+          localStorage.setItem('token', this.account.token);
         });
-        if(!this.logged)
-          this.showDialog = true;
+
+        this.logged = true;
+        if(this.account.role === 'driver') {
+          this.$router.push("/driver/home");
+        }
+        else {
+          this.$router.push("/company/home");
+        }
       }
     },
     cancel() {
-      console.log('cancel');
       this.showDialog = false;
       this.flag = false;
     },
     closeErrorEmail() {
-      console.log('closeErrorEmail');
       this.ShowErrorEmail = false;
       this.flag = false;
     },
     closeErrorPassword() {
-      console.log('closeErrorPassword');
       this.showErrorPassword = false;
       this.flag = false;
     }
