@@ -122,7 +122,7 @@ export default {
   },
   methods: {
     getCompanies() {
-      this.service.GetAll().then((response) => {
+      this.service.getAllRecruiters().then((response) => {
         this.companies = response.data;
         console.log(response.data);
       });

@@ -145,7 +145,7 @@
       "first_name": "Jason",
       "last_name": "Webb",
       "phone": "986427184",
-      "email": "saliw74248@zfobo.com",
+      "email": "zaliw74248@zfobo.com",
       "password": "123456789",
       "license": "A-IIIc",
       "country": "Peru",
@@ -186,15 +186,15 @@
       "id": 4
     },
     {
-      "first_name": "Alberto",
-      "last_name": "Ramirez",
-      "phone": "952819221",
-      "email": "driver",
+      "id": 9,
+      "first_name": "Dominik",
+      "last_name": "Mendoza Ramos",
+      "phone": "+51924068280",
+      "email": "zen@gmail.com",
       "password": "123",
-      "license": "A-IIa",
+      "license": "A-I",
       "country": "Peru",
-      "region": "Lima",
-      "id": 9
+      "region": "Lima"
     }
   ],
   "companies": [
@@ -230,8 +230,8 @@
       "first_name": "Roberto",
       "last_name": "Sanchez",
       "phone": "983456723",
-      "email": "admin",
-      "password": "admin",
+      "email": "ronalsanchez@gmail.com",
+      "password": "admin123",
       "name": "Oltursa",
       "ruc": "10202932123",
       "region": "Callao",
@@ -281,20 +281,6 @@
       "state": "Callao",
       "address": "Callao ",
       "id": 6
-    },
-    {
-      "first_name": "Juan",
-      "last_name": "Sanchez",
-      "phone": "983456723",
-      "email": "admin",
-      "password": "123",
-      "name": "Oltursa",
-      "ruc": "10202932123",
-      "region": "Callao",
-      "city": "Callao",
-      "state": "Callao",
-      "address": "Callao ",
-      "id": 10
     }
   ],
   "driver-news": [
@@ -400,15 +386,9 @@
     },
     {
       "id": 9,
-      "email": "driver",
+      "email": "zen@gmail.com",
       "password": "123",
-      "role": "driver" 
-    },
-    {
-      "id": 10,
-      "email": "admin",
-      "password": "123",
-      "role": "company" 
+      "role": "driver"
     }
   ],
   "jobsdrivers": [

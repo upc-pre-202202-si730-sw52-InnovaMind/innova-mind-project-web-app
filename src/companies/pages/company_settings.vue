@@ -68,19 +68,19 @@ export default {
   },
   created() {
     this.service = new CompaniesServices();
-    this.service.GetCompanyById(localStorage.getItem("id")).then((response) => {
+    this.service.getRecruiterById(localStorage.getItem("id")).then((response) => {
       this.recruiter= response.data;
       console.log(response.data);
     });
   },
   methods: {
     save() {
-      this.service.ModifyCompany(this.recruiter.id, this.recruiter).then((response) => {
-        console.log("Saved!");
+      this.service.updateRecruiter(this.recruiter.recruiter.id, this.recruiter).then((response) => {
+        console.log(response.data);
       });
     },
     restart() {
-      this.service.GetCompanyById(this.recruiter.id).then((response) => {
+      this.service.getRecruiterById(this.recruiter.id).then((response) => {
         this.recruiter= response.data;
         console.log("Restarting!");
       });

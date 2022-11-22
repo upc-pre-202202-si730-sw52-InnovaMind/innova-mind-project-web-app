@@ -213,7 +213,7 @@ export default {
     this.service.GetUsers().then((res) => {
       this.users = res.data;
     });
-    this.service.GetAll().then((res) => {
+    this.service.getAllRecruiters().then((res) => {
       this.companies = res.data;
     });
   },

@@ -1,18 +1,21 @@
 import axios from "axios";
 export class CompaniesServices {
-    BaseURL = "http://localhost:3000/companies";
-    NewsURL = "http://localhost:3000/company-news";
-    ContactsURL = "http://localhost:3000/contacts";
-    //MessagesURL = "http://localhost:3000/messages";
-    MessagesURL = "https://localhost:7275/api/v1/2/message/1";
-    UsersURL= "http://localhost:3000/users";
-    userEmail= "http://localhost:3000/users?email=";
-    NotificationsURL = 'http://localhost:3000/notifications-companies';
-    GetAll() {
-        return axios.get(this.BaseURL);
+    BaseURL = "https://localhost:7275/user";
+    RecruiterURL = "https://localhost:7275/recruiter";
+    NewsURL = "https://localhost:7275/company-news";
+    ContactsURL = "https://localhost:7275/contacts";
+    MessagesURL = "https://localhost:7275/messages";
+    userEmail= "https://localhost:7275/users?email=";
+    NotificationsURL = 'https://localhost:7275/notifications-companies';
+    getAllRecruiters() {
+        return axios.get(this.RecruiterURL);
     }
-    GetCompanyById(id) {
-        return axios.get(`${this.BaseURL}/${id}`);
+    getRecruiterById(id) {
+        return axios.get(`${this.RecruiterURL}/${id}`);
+    }
+    async addRecruiter(recruiter) {
+        await axios.post(this.BaseURL, recruiter);
+        return await axios.post(this.RecruiterURL, recruiter.id);
     }
     AddCompany(company) {
         return axios.post(this.BaseURL, company);
@@ -22,6 +25,9 @@ export class CompaniesServices {
     }
     GetUsers() {
         return axios.get(this.UsersURL);
+    }
+    updateRecruiter(id, recruiter) {
+        return axios.put(`${this.BaseURL}/${id}`, recruiter);
     }
     GetUserByEmail (email) {
         return axios.get(this.userEmail+`${email}`);
