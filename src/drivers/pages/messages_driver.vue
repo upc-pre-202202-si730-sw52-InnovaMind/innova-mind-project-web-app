@@ -107,12 +107,14 @@ export default {
                 firstName: "Contact",
                 lastName: "Name",
                 description: "Description"
-            }
+            },
+            user_id = ""
         };
     },
     created() {
+        this.user_id=localStorage.getItem('id');
         this.service = new DriversServices();
-        this.service.GetContacts().then(response => {
+        this.service.GetContacts(this.user_id).then(response => {
             this.items = response.data;
         });
         this.breakpoints.mobile.on("enter", (mq) => {
@@ -127,19 +129,19 @@ export default {
     },
     methods: {
         GetMessages(){
-            this.service.GetMessages(this.contact.id).then(response => {
+            this.service.GetMessages(this.contact.id, this.user_id).then(response => {
                 this.messages = response.data;
             });
         },
 
         SendMessage() {
             let TempAnswer= {                
-                "emitterId": 1,
+                "emitterId": this.user_id,
                 "receiverId": this.contact.id,
                 "content": this.response
             }
 
-            this.service.SendMessage(TempAnswer, this.contact.id).then(response => {                
+            this.service.SendMessage(TempAnswer, this.contact.id, this.user_id).then(response => {                
                 this.messages.push(response.data);
             });
 

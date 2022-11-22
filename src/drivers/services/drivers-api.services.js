@@ -45,16 +45,16 @@ export class DriversServices {
 
     //////Messages Section /////////
 
-    GetMessages(id) {
-        return axios.get(`https://localhost:7275/api/v1/1/message/${id}`);
+    GetMessages(id, userid) {
+        return axios.get(`https://localhost:7275/api/v1/${userid}/message/${id}`);
     }
 
-    GetContacts() {
-        return axios.get(`https://localhost:7275/api/v1/1/message/drivers`);
+    GetContacts(userid) {
+        return axios.get(`https://localhost:7275/api/v1/${userid}/message/drivers`);
     }
 
-    SendMessage(answer, id){
-        return axios.post(`https://localhost:7275/api/v1/1/message/${id}`, answer)
+    SendMessage(answer, id, userid) {
+        return axios.post(`https://localhost:7275/api/v1/${userid}/message/${id}`, answer)
     }
     //////Notifications Section /////////
 
