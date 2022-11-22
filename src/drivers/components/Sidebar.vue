@@ -4,10 +4,10 @@
         <div class="logo">
             <img
                 class="logo-image"
-                src="https://github.com/upc-pre-202202-si730-sw52-InnovaMind/innova-mind-project-web-app/blob/main/src/assets/images/logoZenDriver.png"
+                src="https://raw.githubusercontent.com/upc-pre-202202-si730-sw52-InnovaMind/innova-mind-project-web-app/main/src/assets/images/logoZenDriver.png"
                 alt="ZenDriver's logo"
             />
-            <p class="logo-text">ZenDriver</p>
+            <p style class="logo-text">ZenDriver</p>
         </div>
         <ul>
             <li>
@@ -15,6 +15,14 @@
                     <div>
                         <i class="pi pi-home"></i>
                         <p>Home</p>
+                    </div>
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/driver/apply" style="text-decoration: none;">
+                    <div>
+                        <i class="pi pi-search"></i>
+                        <p>Apply for job</p>
                     </div>
                 </router-link>
             </li>
@@ -67,7 +75,7 @@
             
             <img
                 class="logo-image"
-                src="https://github.com/upc-pre-202202-si730-sw52-InnovaMind/innova-mind-project-web-app/blob/main/src/assets/images/logoZenDriver.png"
+                src="https://raw.githubusercontent.com/upc-pre-202202-si730-sw52-InnovaMind/innova-mind-project-web-app/main/src/assets/images/logoZenDriver.png"
                 alt="ZenDriver's logo"
             />
             <p class="logo-text">ZenDriver</p>
@@ -78,6 +86,14 @@
                     <div>
                         <i class="pi pi-home"></i>
                         <p>Home</p>
+                    </div>
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/driver/apply" style="text-decoration: none;">
+                    <div>
+                        <i class="pi pi-search"></i>
+                        <p>Apply for job</p>
                     </div>
                 </router-link>
             </li>
@@ -184,19 +200,17 @@ export default {
 .logo {
     display: flex;
     width: 100%;
-    align-items: center;
-    justify-content: center;
     margin-top: 10px;
     margin-bottom: 0px;
+    align-items: center;
 }
 .logo i{
-    position: absolute;
-    z-index: 2000;
-    color: #000;
-    left: 10px;
+  position: absolute;
+  z-index: 2000;
+  color: #000;
+  left: 10px;
 
 }
-
 .logo-text {
     font-size: 1.5rem;
     font-weight: 600;
@@ -206,6 +220,8 @@ export default {
 .logo-image {
     width: 50px;
     height: 50px;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 ul {
@@ -215,7 +231,6 @@ ul {
 li div {
     display: flex;
     align-items: center;
-    justify-content: center;
     margin: 0px 0;
     padding: 6px 20px;
     font-size: 1rem;
@@ -234,7 +249,12 @@ li div i {
 }
 router-link{
     text-decoration: none;
-   
+}
+i {
+    color:black;
+}
+p{ 
+    color: black;
 }
 
 
