@@ -43,7 +43,12 @@
 <script lang="js">
 import { DriversServices } from "../services/drivers-api.services";
 
+
 export default {
+
+  components: {
+
+  },
     data() {
         return {
             news: [
@@ -53,10 +58,18 @@ export default {
             ],
             Perfil:{},
             user_id:"",
+            users: [],
             
         };
     },
     created() {
+      this.service = new DriversServices();
+      this.service.GetUserById().then((response) => {
+        console.log(response.data);
+      });
+
+
+        /*
         try {
             this.service = new DriversServices();
             this.user_id=localStorage.getItem('id');
@@ -74,6 +87,8 @@ export default {
         } catch (error) {
             
         }
+        */
+
     },
     methods: {},
 };

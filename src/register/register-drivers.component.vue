@@ -81,7 +81,7 @@
 </template>
 
 <script>
-import { DriversServices } from "@/drivers/services/drivers-api.services";
+import { LoginApiService } from "@/login/services/login-api.service";
 import Dialog from "@/login/pages/Dialog.vue";
 import {computed, reactive} from "vue";
 import {email, maxLength, minLength, required} from "@vuelidate/validators";
@@ -106,7 +106,7 @@ export default {
         country: "",
         region: "",
       },
-    })
+    });
     const rules = computed(() => {
       return {
         driver: {
@@ -156,14 +156,16 @@ export default {
         "A-IIIb",
         "A-IIIc",
       ],
-      users: [],
-      account: {
-        id: '',
-        email: '',
+      UserRequest: {
+        firstName: '',
+        lastName: '',
+        username: '',
         password: '',
+        phone: '',
         role: '',
+        description: '',
+        imageUrl: 'https://th.bing.com/th/id/R.d995d728def36a40a261e36bab9f9bfe?rik=KbovzdNLdAjNdg&pid=ImgRaw&r=0',
       },
-      drivers: [],
       driver: {
         id: '',
         first_name: '',
@@ -175,6 +177,9 @@ export default {
         country: '',
         region: '',
       },
+      DriverRequest: {
+        userId: '',
+      },
       pass: "",
       showDialog: false,
       registered: false,
@@ -184,13 +189,8 @@ export default {
     };
   },
   created() {
-    this.service = new DriversServices();
-    this.service.GetUsers().then((res) => {
-      this.users = res.data;
-    });
-    this.service.GetAll().then((res) => {
-      this.drivers = res.data;
-    });
+    this.service = new LoginApiService();
+
   },
   methods: {
     cancel() {
@@ -206,45 +206,61 @@ export default {
     validatePassword() {
       this.showMismatchPassword = false;
     },
-    AddUser() {
-      this.account.id = 0;
-      this.account.email = this.driver.email;
-      this.account.password = this.driver.password;
-      this.account.role = "driver";
-      this.service.AddUser(this.account).then((response) => {
-        this.users.push(this.account);
+
+    async AddUserDriver (id) {
+      this.DriverRequest.userId = id;
+      await this.service.postDriver(this.DriverRequest).then((response) => {
+        console.log(response);
+        if(response.status ==  201)
+        {
+          console.log(response.data)
+          this.router.push("/login");
+        }
       });
     },
-    Add() {
-      this.driver.id = this.users[this.users.length - 1].id+1;
-      this.service.AddDriver(this.driver).then((response) => {
-        this.drivers.push(this.driver);
-      });
-      this.showSuccess = true;
+
     },
-    verifyEmail() {
-      for (let i = 0; i < this.users.length; i++) {
-        if (this.users[i].email === this.driver.email) {
-          this.showDialog = true;
-          this.registered = true;
-          break;
-        }
-        else {
-          this.registered = false;
-          break;
-        }
+
+    async GetUser (username, password){
+      let user = {
+        username: username ,
+        password: password,
       }
+      await this.service.getUser(user).then((response) => {
+       if(response.status === 200) {
+         localStorage.setItem('id', response.data.id);
+         if(response.status === 200) {
+           console.log(response.data)
+           this.showSuccess = true;
+           this.AddUserDriver(response.data.id);
+
+         }
+       }
+      });
     },
+
+    async AddUser() {
+      this.UserRequest.firstName = this.driver.first_name;
+      this.UserRequest.lastName = this.driver.last_name;
+      this.UserRequest.username = this.driver.email;
+      this.UserRequest.password = this.driver.password;
+      this.UserRequest.phone = this.driver.phone;
+      this.UserRequest.role = "driver";
+      this.UserRequest.description = "I am a driver" + " " + this.driver.first_name + " " + this.driver.last_name;
+
+      await this.service.postUser(this.UserRequest).then((response) => {
+        if(response.status === 200) {
+          this.GetUser(this.UserRequest.username, this.UserRequest.password);
+        }
+      });
+    },
+
     SubmitForm() {
       if(this.driver.first_name !== "" && this.driver.last_name !== "" && this.driver.phone !== "" && this.driver.email !== ""
           && this.driver.password !== "" && this.driver.license !== "" && this.driver.country !== "" && this.driver.region !== ""
           && this.pass !== ""){
         if (this.pass === this.driver.password) {
-          this.verifyEmail();
-          if(!this.registered) {
-            this.AddUser();
-            this.Add();
-          }
+          this.AddUser();
         }
         else {
           this.showMismatchPassword = true;
@@ -254,8 +270,7 @@ export default {
         this.showError = true;
       }
     },
-  },
-};
+  };
 </script>
 
 <style>

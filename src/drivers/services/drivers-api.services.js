@@ -1,4 +1,7 @@
 import axios from "axios";
+
+
+
 export class DriversServices {
     BaseURL = "http://localhost:3000/drivers";
     NewsURL = "http://localhost:3000/driver-news";
@@ -7,6 +10,11 @@ export class DriversServices {
     UsersURL= "http://localhost:3000/users";
     JobsURL = "http://localhost:3000/jobsdrivers";
     NotificationsURL = 'http://localhost:3000/notifications-drivers';
+
+
+    getAllUsers() {
+        return axios.get('https://localhost:7275/api/v1/users');
+    }
 
     GetAll() {
         return axios.get(this.BaseURL);
@@ -60,5 +68,12 @@ export class DriversServices {
 
     GetNotifications() {
         return axios.get(this.NotificationsURL);
+    }
+    GetUserById() {
+        return axios.get('https://localhost:7275/api/v1/users/4',{
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
     }
 }
