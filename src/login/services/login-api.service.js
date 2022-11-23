@@ -11,7 +11,11 @@ export class LoginApiService {
         return axios.post(this.PostUserURL, UserRequest);
     }
     postDriver(DriverRequest) {
-        return axios.post(this.UsersURL, DriverRequest);
+        return axios.post(this.UsersURL, DriverRequest,{
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
     }
 
 }
