@@ -47,7 +47,7 @@
                     <img alt="user header"                         :src="user.imageUrl"
 >
                 </div>
-                <Card style="width: 100%; margin-top: 2em" v-for="(New, i) in news" :key="i">
+                <!-- <Card style="width: 100%; margin-top: 2em" v-for="(New, i) in news" :key="i">
                     <template #header>
                         <img :src="New.photo" style="height: 15rem" />
                     </template>
@@ -59,7 +59,7 @@
                         </p>
                     </template>
                     
-                </Card>
+                </Card> -->
             
 
             </div>
@@ -67,10 +67,10 @@
         </div>
         <div class="right-bar">
             <div class="profile-bar2">
-                <h5>{{Perfil.first_name}}</h5>
+                <h5>{{user.firstName}}</h5>
                 <div class="profile-image">
                     <img
-                        src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg"
+                    :src="user.imageUrl"
                         alt=""
                     />
                 </div>
@@ -108,14 +108,14 @@ export default {
         this.user_id=localStorage.getItem('id');
     this.service = new CompaniesServices();
     // console.log(user_id);
-    this.service.Getcompanie(this.user_id).then((response) => {
-      this.Perfil = response.data;
-      console.log(response.data);
-    });
-    this.service.GetCompaniesNews().then((response) => {
-            this.news = response.data;
-            console.log(response.data);
-        });
+    // this.service.Getcompanie(this.user_id).then((response) => {
+    //   this.Perfil = response.data;
+    //   console.log(response.data);
+    // });
+    // this.service.GetCompaniesNews().then((response) => {
+    //         this.news = response.data;
+    //         console.log(response.data);
+    //     });
         this.service.GetUserById(localStorage.getItem('id')).then((response) => {
         this.user = response.data;
         console.log(this.user);
