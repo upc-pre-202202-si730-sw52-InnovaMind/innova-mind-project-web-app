@@ -11,14 +11,14 @@
             <div class="left-profile-bar">
                 <div class="profile-image-center">
                     <img
-                        src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg"
+                        :src="user.imageUrl"
                         alt=""
                     />
                 </div>
 
             </div>
             <div class="name">
-                <h3>{{Perfil.first_name}} {{Perfil.last_name}}</h3>
+                <h3> {{user.firstName + " "+ user.lastName }}</h3>
             </div>
             <div class="Description">
                 <h5>Experience as a truck driver in driving with a semi-trailer, trailer and coupled with the guarantee of safety and the driving experience that this entails.</h5>
@@ -26,16 +26,15 @@
             </div>
             <div class="line"></div>
             <div class="Contact">
-                <h5><i class="pi pi-envelope"></i> {{Perfil.email}}</h5>
-                <h5><i class="pi pi-phone"></i> {{Perfil.phone}}</h5>
-                <h5><i class="pi pi-map-marker"></i> {{Perfil.region}}/{{Perfil.country}}</h5>
+                <h5><i class="pi pi-envelope"></i>{{user.userName}} </h5>
+                <h5><i class="pi pi-phone"></i> {{user.phone}}</h5>
                 
             </div>
             <div class="line"></div>
             <div class="networks">
-                <h5><i class="pi pi-facebook"></i> {{Perfil.email}}</h5>
-                <h5><i class="pi pi-instagram"></i> {{Perfil.phone}}</h5>
-                <h5><i class="pi pi-twitter"></i> {{Perfil.region}}/{{Perfil.country}}</h5>
+                <h5><i class="pi pi-facebook"></i> {{user.userName}}</h5>
+                <h5><i class="pi pi-instagram"></i> {{user.userName}}</h5>
+                <h5><i class="pi pi-twitter"></i> {{user.userName}}</h5>
                 
             </div>
             <div class="line"></div>
@@ -45,7 +44,8 @@
         <div class="center-bar">
             <div class="profile-bar">
                 <div class="profile-image2">
-                    <img alt="user header" src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg">
+                    <img alt="user header"                         :src="user.imageUrl"
+>
                 </div>
                 <Card style="width: 100%; margin-top: 2em" v-for="(New, i) in news" :key="i">
                     <template #header>
@@ -116,6 +116,10 @@ export default {
             this.news = response.data;
             console.log(response.data);
         });
+        this.service.GetUserById(localStorage.getItem('id')).then((response) => {
+        this.user = response.data;
+        console.log(this.user);
+      });
         // this.service.GetJobsDriver(1).then((response) => {
         //     this.jobs = response.data;
         //     console.log(response.data);
