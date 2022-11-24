@@ -74,8 +74,8 @@ export class CompaniesServices {
 
     //////Notifications Section /////////
 
-    GetNotificationsByUserId(id, UserId) {
-        return axios.get(`https://localhost:7275/api/v1/${UserId}/notification/${id}`,{
+    GetNotificationsByUserId(UserId) {
+        return axios.get(`https://localhost:7275/api/v1/${UserId}/notification`,{
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -88,7 +88,7 @@ export class CompaniesServices {
             }
         });
     }
-    DeleteNotificationById(id, UserId) {
+    DeleteNotificationById(UserId,id) {
         return axios.delete(`https://localhost:7275/api/v1/${UserId}/notification/${id}`,
             {
                 headers: {
