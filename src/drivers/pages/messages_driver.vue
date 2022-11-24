@@ -108,7 +108,7 @@ export default {
                 lastName: "Name",
                 description: "Description"
             },
-            user_id = ""
+
         };
     },
     created() {

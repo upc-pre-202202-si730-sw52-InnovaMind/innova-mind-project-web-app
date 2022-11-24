@@ -5,9 +5,10 @@ export class CompaniesServices {
     ContactsURL = "http://localhost:3000/contacts";
     //MessagesURL = "http://localhost:3000/messages";
     MessagesURL = "https://localhost:7275/api/v1/2/message/1";
+
     UsersURL= "http://localhost:3000/users";
     userEmail= "http://localhost:3000/users?email=";
-    NotificationsURL = 'http://localhost:3000/notifications-companies';
+    NotificationsURL = 'https://localhost:7275/api/v1/2/notification/1';
     GetAll() {
         return axios.get(this.BaseURL);
     }
@@ -55,7 +56,27 @@ export class CompaniesServices {
 
     //////Notifications Section /////////
 
-    GetNotifications() {
-        return axios.get(this.NotificationsURL);
+    GetNotificationsByUserId(id, UserId) {
+        return axios.get(`https://localhost:7275/api/v1/${UserId}/notification/${id}`,{
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
     }
+    SendNotification(answer) {
+        return axios.post(this.NotificationsURL, answer, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+    }
+    DeleteNotificationById(id, UserId) {
+        return axios.delete(`https://localhost:7275/api/v1/${UserId}/notification/${id}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+    }
+
 }

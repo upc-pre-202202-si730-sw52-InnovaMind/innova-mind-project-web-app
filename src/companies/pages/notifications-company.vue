@@ -9,14 +9,13 @@
             :key="i"
         >
           <template #header>
-            <img alt="user header"  :src="notification.photo" class="avatar-header-image">
+            <img alt="user header"  :src="notification.receiver.image" class="avatar-header-image">
           </template>
-          <template #title> {{ notification.contact }} </template>
+          <template #title> {{ notification.receiver.firstName + " " + notification.receiver.lastName}} </template>
           <template #content>
-            <p class="text-black">{{notification.message}}</p> <h5>{{notification.date}}</h5>
+            <p class="text-black">{{notification.content}}</p>
           </template>
           <template #footer>
-            <pv-button icon="pi pi-check" label="View" class="p-button-primary" />
             <pv-button icon="pi pi-times" label="Delete" class="p-button-secondary" style="margin-left: 0.2em"/>
           </template>
         </pv-card>
@@ -42,12 +41,31 @@ export default {
   },
   created() {
     this.service = new CompaniesServices();
-    this.service.GetNotifications().then((response) => {
-      this.notifications = response.data;
-      console.log(response.data);
-    });
   },
-  methods: {},
+  methods: {
+    GetNotificationByUserId() {
+      this.service.GetNotificationByUserId().then((response) => {
+        this.notifications = response.data;
+      });
+    },
+    SendNotification() {
+      let TempAnswer = {
+        "emitterId": 2,
+        "receiverId": 1,
+        "content": this.response,
+      }
+      this.service.SendNotification(TempAnswer).then((response) => {
+        this.messages.push(response.data);
+      });
+
+      this.response="";
+    },
+    DeleteNotification(id) {
+      this.service.DeleteNotification(id).then((response) => {
+        this.notifications = this.notifications.filter((notification) => notification.id !== id);
+      });
+    },
+  },
 };
 </script>
 
