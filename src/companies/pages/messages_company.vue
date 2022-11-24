@@ -113,9 +113,8 @@ export default {
     },
     created() {
         this.service = new CompaniesServices();
-        this.service.GetContacts().then(response => {
+        this.service.GetContacts(localStorage.getItem('id')).then(response => {
             this.items = response.data;
-            console.log(this.items);
         });
         this.breakpoints.mobile.on("enter", (mq) => {
             console.log("Entered mobile breakpoint");
@@ -129,14 +128,14 @@ export default {
     },
     methods: {
         GetMessages(){
-            this.service.GetMessages(this.contact.id).then(response => {
+            this.service.GetMessages(localStorage.getItem('id'), this.contact.id).then(response => {
                 this.messages = response.data;
             });
         },
 
         SendMessage() {
             let TempAnswer= {                
-                "emitterId": 2,
+                "emitterId": localStorage.getItem('id'),
                 "receiverId": this.contact.id,
                 "content": this.response
             }

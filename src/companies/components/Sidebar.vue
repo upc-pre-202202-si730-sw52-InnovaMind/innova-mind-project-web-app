@@ -11,7 +11,7 @@
         </div>
         <ul>
             <li>
-                <router-link to="/driver/home" style="text-decoration: none;">
+                <router-link to="/company/home" style="text-decoration: none;">
                     <div>
                         <i class="pi pi-home"></i>
                         <p>Home</p>
@@ -19,15 +19,7 @@
                 </router-link>
             </li>
             <li>
-                <router-link to="/driver/apply" style="text-decoration: none;">
-                    <div>
-                        <i class="pi pi-search"></i>
-                        <p>Apply for job</p>
-                    </div>
-                </router-link>
-            </li>
-            <li>
-                <router-link to="/driver/messages" style="text-decoration: none;">
+                <router-link to="/company/messages" style="text-decoration: none;">
                     <div>
                         <i class="pi pi-comments"></i>
                         <p>Messages</p>
@@ -36,7 +28,7 @@
                 
             </li>
             <li>                
-                <router-link to="/driver/notifications" style="text-decoration: none;">
+                <router-link to="/company/notifications" style="text-decoration: none;">
                     <div>
                         <i class="pi pi-bell"></i>
                         <p>Notifications</p>
@@ -44,7 +36,7 @@
                 </router-link>
             </li>
             <li>
-                <router-link to="/driver/profile" style="text-decoration: none;">
+                <router-link to="/company/profile" style="text-decoration: none;">
                     <div>
                     <i class="pi pi-user"></i>
                     <p>Profile</p>
@@ -53,7 +45,7 @@
                 
             </li>
             <li>
-                <router-link to="/driver/settings" style="text-decoration: none;">
+                <router-link to="/company/settings" style="text-decoration: none;">
                     <div>
                     <i class="pi pi-sliders-h"></i>
                     <p>Settings</p>
@@ -82,7 +74,7 @@
         </div>
         <ul>
             <li>
-                <router-link to="/driver/home" style="text-decoration: none;">
+                <router-link to="/company/home" style="text-decoration: none;">
                     <div>
                         <i class="pi pi-home"></i>
                         <p>Home</p>
@@ -90,7 +82,7 @@
                 </router-link>
             </li>
             <li>
-                <router-link to="/driver/apply" style="text-decoration: none;">
+                <router-link to="/company/apply" style="text-decoration: none;">
                     <div>
                         <i class="pi pi-search"></i>
                         <p>Apply for job</p>
@@ -98,7 +90,7 @@
                 </router-link>
             </li>
             <li>
-                <router-link to="/driver/messages" style="text-decoration: none;">
+                <router-link to="/company/messages" style="text-decoration: none;">
                     <div>
                         <i class="pi pi-comments"></i>
                         <p>Messages</p>
@@ -107,7 +99,7 @@
                 
             </li>
             <li>                
-                <router-link to="/driver/notifications" style="text-decoration: none;">
+                <router-link to="/company/notifications" style="text-decoration: none;">
                     <div>
                         <i class="pi pi-bell"></i>
                         <p>Notifications</p>
@@ -115,7 +107,7 @@
                 </router-link>
             </li>
             <li>
-                <router-link to="/driver/profile" style="text-decoration: none;">
+                <router-link to="/company/profile" style="text-decoration: none;">
                     <div>
                     <i class="pi pi-user"></i>
                     <p>Profile</p>
@@ -124,7 +116,7 @@
                 
             </li>
             <li>
-                <router-link to="/driver/settings" style="text-decoration: none;">
+                <router-link to="/company/settings" style="text-decoration: none;">
                     <div>
                     <i class="pi pi-sliders-h"></i>
                     <p>Settings</p>
