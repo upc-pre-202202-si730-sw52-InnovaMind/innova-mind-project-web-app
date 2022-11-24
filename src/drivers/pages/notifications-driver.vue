@@ -9,15 +9,14 @@
             :key="i"
         >
           <template #header>
-            <img alt="user header"  :src="notification.photo" class="avatar-header-image">
+            <img alt="user header"  :src="notification.emitter.imageUrl" class="avatar-header-image">
           </template>
-          <template #title> {{ notification.contact }} </template>
+          <template #title> {{ notification.emitter.firstName + " " + notification.emitter.lastName}} </template>
           <template #content>
-            <p class="text-black">{{notification.message}}</p> <h5>{{notification.date}}</h5>
+            <p class="text-black">{{notification.content}}</p>
           </template>
           <template #footer>
-            <pv-button icon="pi pi-check" label="View" class="p-button-primary" />
-            <pv-button icon="pi pi-times" label="Delete" class="p-button-secondary" style="margin-left: 0.2em"/>
+            <pv-button onClick="DeleteNotificationById(notification.id)" icon="pi pi-times" label="Delete" class="p-button-secondary" style="margin-left: 0.2em"/>
           </template>
         </pv-card>
       </div>
@@ -42,12 +41,30 @@ export default {
   },
   created() {
     this.service = new DriversServices();
-    this.service.GetNotifications().then((response) => {
+    this.service.GetNotificationsByUserId(localStorage.getItem("id")).then((response) => {
       this.notifications = response.data;
       console.log(response.data);
     });
   },
-  methods: {},
+  methods: {
+    SendNotification() {
+      let TempAnswer = {
+        "emitterId": 1,
+        "receiverId": 2,
+        "content": this.response,
+      }
+      this.service.SendNotification(TempAnswer).then((response) => {
+        this.messages.push(response.data);
+      });
+    },
+    DeleteNotification(id) {
+      this.service.DeleteNotification(localStorage.getItem("id"),id).then((response) => {
+        //this.notifications = this.notifications.filter((notification) => notification.id !== id);
+        this.notifications.delete(id);
+      });
+    },
+
+  },
 };
 </script>
 

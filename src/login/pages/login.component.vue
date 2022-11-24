@@ -38,14 +38,15 @@ import useValidate from '@vuelidate/core'
 import { required, email,  maxLength, minLength} from '@vuelidate/validators'
 import {computed, reactive} from "vue";
 import Dialog  from "@/login/pages/Dialog.vue";
-import { loginApiService } from "@/login/services/login-api.service";
+
+import { LoginApiService } from "@/login/services/login-api.service";
 
 export default {
   name: "LoginComponent",
   props: ['show', 'description', 'title', 'close'],
   components: {
     Dialog,
-    loginApiService
+    LoginApiService
   },
   data () {
     return {
@@ -72,7 +73,7 @@ export default {
   },
 
   created() {
-    this.service = new loginApiService();
+    this.service = new LoginApiService();
   },
   mounted() {
     if(localStorage.getItem('id')) {
@@ -121,6 +122,30 @@ export default {
       window.location.href = `https://upc-pre-202202-si730-sw52-innovamind.github.io/`;
     },
 
+    async login(){
+      let UserRequest = {
+        username: this.user.email,
+        password: this.user.password
+      }
+
+      await this.service.getUser(UserRequest).then(response=> {
+        this.account = response.data;
+        localStorage.setItem('id', this.account.id);
+        localStorage.setItem('role', this.account.role);
+        localStorage.setItem('token', response.data.token);
+
+        if(this.account.role === 'driver') {
+          this.$router.push("/driver/home");
+        }
+        else{
+          this.$router.push("/company/home");
+        }
+      }).catch(error => {
+        console.log(error);
+        this.showDialog = true;
+      })
+    },
+
     submitForm() {
       let config = {
         headers: {
@@ -140,25 +165,7 @@ export default {
         this.flag = true;
       }
       else {
-        let UserRequest = {
-          username: this.user.email,
-          password: this.user.password
-        }
-        this.service.getUser(UserRequest).then(response=> {
-          this.account = response.data;
-          console.log(response.data);
-          localStorage.setItem('id', this.account.id);
-          localStorage.setItem('role', this.account.role);
-          localStorage.setItem('token', this.account.token);
-        });
-
-        this.logged = true;
-        if(this.account.role === 'driver') {
-          this.$router.push("/driver/home");
-        }
-        else {
-          this.$router.push("/company/home");
-        }
+        this.login();
       }
     },
     cancel() {
