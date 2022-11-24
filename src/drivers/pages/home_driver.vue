@@ -21,7 +21,7 @@
                 <img :src="New.photo" style="height: 15rem" />
             </template>
             <template #title> {{ New.title }} </template>
-            <template #subtitle> {{ New.author }} </template>
+            <template #subtitle> {{ New.user.imageUrl }} </template>
             <template #content>
                 <p>
                     {{ New.description }}
@@ -45,34 +45,44 @@ import { DriversServices } from "../services/drivers-api.services";
 
 export default {
     data() {
-        return {
-            news: [
-              { "photo": ""},
-              { "title": ""},
-              { "author": ""}
-            ],
-            Perfil:{},
-            user_id:"",
-            
+      let map1 = new Map();
+      return {
+          photoImage: "https://astinaccounts.com/wp-content/uploads/2019/10/Astin-Accounts-Hiring.png",
+          news: [
+            { "title": "",
+              "description": "",
+              "user": {
+
+              }
+            }
+          ],
+          service: null,
+          map1 : [],
         };
     },
     created() {
         try {
+          try {
             this.service = new DriversServices();
-            this.user_id=localStorage.getItem('id');
-            this.service.Getdriver(this.user_id).then((response) => {
-                this.Perfil = response.data;
-                console.log(response.data);
+            this.service.GetDriversNews().then((response) => {
+              if(response.status == 200){
+                this.news = response.data;
+                for (let i = 0; i < response.data.length; i++) {
+                  this.service.GetUserById(response.data[i].recruiter.userId).then((response) => {
+                    if(response.status == 200){
+                      this.news[i].user = response.data;
+                      console.log(this.news[i]);
+                    }
+                  });
+
+                }
+              }
             });
-            
-        
-        this.service.GetDriversNews().then((response) => {
-            this.news = response.data;
-            console.log(response.data);
-        });
-            
+          } catch (error) {
+
+          }
         } catch (error) {
-            
+
         }
     },
     methods: {},

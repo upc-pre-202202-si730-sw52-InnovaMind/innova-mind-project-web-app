@@ -28,10 +28,10 @@
                 </p>
             </template>
             <template #footer>
-                <pv-button icon="pi pi-check" label="Save" />
+                <pv-button icon="pi pi-eye" label="View Profile" />
                 <pv-button
-                    icon="pi pi-times"
-                    label="Cancel"
+                    icon="pi pi-bell"
+                    label="Notify"
                     class="p-button-secondary"
                     style="margin-left: 0.5em"
                 />
@@ -53,10 +53,10 @@ export default {
     async created() {
         this.service = new CompaniesServices();
         await this.service.GetAllUsers().then((response) => {
-            if(response.status == 200){
-              this.users = response.data;
-              console.log(response.data);
-            }
+          if(response.status == 200){
+
+            this.users = response.data.filter( x => x.role === "driver")
+          }
         });
     },
     methods: {},
