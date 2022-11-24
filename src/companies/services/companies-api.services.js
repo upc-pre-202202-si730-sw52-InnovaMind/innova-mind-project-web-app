@@ -1,7 +1,7 @@
 import axios from "axios";
 export class CompaniesServices {
     UsersURL= "https://localhost:7275/api/v1/users";
-    BaseURL = "http://localhost:3000/companies";
+    BaseURL = "http://localhost:3000/";
     NewsURL = "http://localhost:3000/company-news";
     ContactsURL = "http://localhost:3000/contacts";
     //MessagesURL = "http://localhost:3000/messages";
@@ -20,6 +20,13 @@ export class CompaniesServices {
 
     GetUserById(id) {
         return axios.get(`${this.UsersURL}/${id}`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+    }
+    ModifyCompany(id, company) {
+        return axios.put(`${this.BaseURL}/${id}`, company, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -44,9 +51,7 @@ export class CompaniesServices {
     GetUserByEmail (email) {
         return axios.get(this.userEmail+`${email}`);
     }
-    ModifyCompany(id, company) {
-        return axios.put(`${this.BaseURL}/${id}`, company);
-    }
+    
     Delete(id) {
         return axios.delete(`${this.BaseURL}/${id}`);
     }

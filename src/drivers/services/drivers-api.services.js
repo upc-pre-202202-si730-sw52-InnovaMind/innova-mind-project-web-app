@@ -1,31 +1,28 @@
 import axios from "axios";
 export class DriversServices {
-    UsersURL= "https://localhost:7275/api/v1/users";
-
-    BaseURL = "http://localhost:3000/drivers";
-    NewsURL = "https://localhost:7275/api/v1/post";
-    ContactsURL = "http://localhost:3000/contacts";
-    MessagesURL = "http://localhost:3000/messages";
-
-    JobsURL = "http://localhost:3000/jobsdrivers";
-    NotificationsURL = 'http://localhost:3000/notifications-drivers';
+    UsersURL= "https://localhost:7275/api/v1/users"
+    NewsURL = "https://localhost:7275/api/v1/post"
 
     GetAll() {
-        return axios.get(this.BaseURL);
+        return axios.get(this.UsersURL);
     }
     AddDriver(driver) {
         return axios.post(`${this.BaseURL}`, driver);
     }
     GetDriverById(id) {
-        return axios.get(`${this.BaseURL}/${id}`);
+        return axios.get(`${this.UsersURL}/${id}`);
     }
 
     ModifyDriver(id, driver) {
-        return axios.put(`${this.BaseURL}/${id}`, driver);
+        return axios.put(`${this.UsersURL}/${id}`, driver, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
     }
 
     Getdriver(id) {
-        return axios.get(`${this.BaseURL}/${id}`);
+        return axios.get(`${this.UsersURL}/${id}`);
     }
     GetJobsDriver(id) {
         return axios.get(`${this.JobsURL}?idUser=${id}`);

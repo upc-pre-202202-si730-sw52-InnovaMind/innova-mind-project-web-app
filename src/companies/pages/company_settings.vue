@@ -63,7 +63,16 @@ export default {
   name: "company_settings",
   data() {
     return {
-      recruiter: {},
+      recruiter: {
+      "fistName": "",
+      "lastName": "",
+      "userName": "",
+      "password": "",
+      "phone": "",
+      "role": "",
+      "description": "",
+      "imageUrl": ""
+      },
     };
   },
   created() {
