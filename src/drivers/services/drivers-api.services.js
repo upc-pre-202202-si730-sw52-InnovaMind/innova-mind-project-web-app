@@ -55,6 +55,28 @@ export class DriversServices {
     GetNotifications() {
         return axios.get(this.NotificationsURL);
     }
+    GetNotificationsByUserId(UserId) {
+        return axios.get(`https://localhost:7275/api/v1/${UserId}/notification`,{
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+    }
+    SendNotification(answer) {
+        return axios.post(this.NotificationsURL, answer, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+    }
+    DeleteNotificationById(UserId, id) {
+        return axios.delete(`https://localhost:7275/api/v1/${UserId}/notification/${id}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+    }
     AddUser(user) {
         return axios.post(this.UsersURL, user);
     }

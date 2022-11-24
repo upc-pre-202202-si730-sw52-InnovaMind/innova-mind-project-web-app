@@ -33,6 +33,7 @@ export class CompaniesServices {
         });
     }
 
+    NotificationsURL = 'https://localhost:7275/api/v1/2/notification/1';
     GetAll() {
         return axios.get(this.BaseURL);
     }
@@ -78,7 +79,27 @@ export class CompaniesServices {
 
     //////Notifications Section /////////
 
-    GetNotifications() {
-        return axios.get(this.NotificationsURL);
+    GetNotificationsByUserId(UserId) {
+        return axios.get(`https://localhost:7275/api/v1/${UserId}/notification`,{
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
     }
+    SendNotification(answer) {
+        return axios.post(this.NotificationsURL, answer, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+    }
+    DeleteNotificationById(UserId,id) {
+        return axios.delete(`https://localhost:7275/api/v1/${UserId}/notification/${id}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+    }
+
 }
