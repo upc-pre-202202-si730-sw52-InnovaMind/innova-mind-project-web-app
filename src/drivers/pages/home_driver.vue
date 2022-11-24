@@ -11,10 +11,10 @@
 
         <pv-card style="width: 25em; margin-top: 2em" v-for="(New, i) in news" :key="i">
             <template #header>
-                <img :src="photoImage" style="height:15rem">
+                <img :src="New.imagenURL" style="height: 15rem"/>
             </template>
             <template #title> {{ New.title }} </template>
-            <template #subtitle> I am a recruiter from one {{ New.user.role }} </template>
+            <template #subtitle> I am a recruiter from one {{ New.date + " "+ New.location}} </template>
             <template #content>
                 <p>
                     {{ New.description }}
@@ -39,23 +39,7 @@ import { DriversServices } from "../services/drivers-api.services";
 export default {
     data() {
       return {
-          photoImage: "https://astinaccounts.com/wp-content/uploads/2019/10/Astin-Accounts-Hiring.png",
-          news: [
-            { "title": "Need driver",
-              "description": "I am a driver",
-              "user": {
-                "id": "",
-                "firstName": "",
-                "lastName": "",
-                "userName": "",
-                "password": "",
-                "phone": "",
-                "role": "",
-                "description": "",
-                "imageUrl": ""
-              }
-            }
-          ],
+          news: [],
           service: null,
         };
     },
@@ -65,14 +49,6 @@ export default {
       await this.service.GetDriversNews().then((response) => {
         if(response.status == 200){
           this.news = response.data;
-          for (let i = 0; i < response.data.length; i++) {
-            this.service.GetUserById(response.data[i].recruiter.userId).then((response) => {
-              if(response.status == 200){
-                this.news[i].user = response.data;
-                console.log(this.news[i]);
-              }
-            });
-          }
         }
       });
 
