@@ -8,10 +8,10 @@
 
         <div class="left-bar">
             <div class="profile-bar">
-                <h5>Guillermo Diaz</h5>
+                <h5>{{ user.firstName + " "+ user.lastName}} </h5>
                 <div class="profile-image">
                     <img
-                        src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg"
+                        :src="user.imageUrl"
                         alt="Driver's profile photo"
                     />
                 </div>
@@ -20,18 +20,27 @@
     </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import "primeicons/primeicons.css";
 import Sidebar from "../drivers/components/Sidebar.vue";
+import {CompaniesServices} from "@/companies/services/companies-api.services";
 
 export default {
     components: {
         Sidebar,
     },
     data() {
-        return {};
+        return {
+          service: null,
+          user: {},
+        };
     },
-    created() {},
+    created() {
+      this.service = new CompaniesServices();
+      this.service.GetUserById(localStorage.getItem('id')).then((response) => {
+        this.user = response.data;
+      });
+    },
     methods: {},
 };
 </script>

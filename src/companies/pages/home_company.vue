@@ -14,17 +14,17 @@
 
         <pv-card
             style="width: 25em; margin-top: 2em"
-            v-for="(New, i) in news"
+            v-for="(user, i) in users"
             :key="i"
         >
             <template #header>
-                <img :src="New.photo" style="height: 15rem" />
+                <img :src="user.imageUrl" style="height: 15rem" />
             </template>
-            <template #title> {{ New.title }} </template>
-            <template #subtitle> {{ New.author }} </template>
+            <template #title> {{ user.firstName + " "+ user.lastName }} </template>
+            <template #subtitle> {{ user.role }} </template>
             <template #content>
                 <p>
-                    {{ New.description }}
+                    {{ user.description }}
                 </p>
             </template>
             <template #footer>
@@ -46,15 +46,17 @@ import { CompaniesServices } from "../services/companies-api.services";
 export default {
     data() {
         return {
-            news: [],
+            users: [],
             service: null,
         };
     },
-    created() {
+    async created() {
         this.service = new CompaniesServices();
-        this.service.GetCompaniesNews().then((response) => {
-            this.news = response.data;
-            console.log(response.data);
+        await this.service.GetAllUsers().then((response) => {
+            if(response.status == 200){
+              this.users = response.data;
+              console.log(response.data);
+            }
         });
     },
     methods: {},

@@ -108,14 +108,13 @@ export default {
                 lastName: "Name",
                 description: "Description"
             },
-            user_id = ""
         };
     },
     created() {
         this.user_id=localStorage.getItem('id');
         this.service = new DriversServices();
         this.service.GetContacts(this.user_id).then(response => {
-            this.items = response.data;
+          this.items = response.data;
         });
         this.breakpoints.mobile.on("enter", (mq) => {
             console.log("Entered mobile breakpoint");
