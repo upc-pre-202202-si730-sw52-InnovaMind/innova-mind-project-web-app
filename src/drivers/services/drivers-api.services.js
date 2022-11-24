@@ -52,9 +52,6 @@ export class DriversServices {
     }
     //////Notifications Section /////////
 
-    GetNotifications() {
-        return axios.get(this.NotificationsURL);
-    }
     GetNotificationsByUserId(UserId) {
         return axios.get(`https://localhost:7275/api/v1/${UserId}/notification`,{
             headers: {
