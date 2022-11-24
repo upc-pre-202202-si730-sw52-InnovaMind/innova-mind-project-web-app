@@ -101,6 +101,7 @@ export default {
             news: [],
             jobs: [],
             user_id: "",
+            user:{},
 
         };
     },
