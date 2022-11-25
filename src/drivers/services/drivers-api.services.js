@@ -1,14 +1,12 @@
 import axios from "axios";
 
-
-
 export class DriversServices {
-    UsersURL= "https://localhost:7275/api/v1/users"
-    NewsURL = "https://localhost:7275/api/v1/post"
+    UsersURL= "https://innovamind.herokuapp.com/api/v1/users"
+    NewsURL = "https://innovamind.herokuapp.com/api/v1/post"
 
 
     getAllUsers() {
-        return axios.get('https://localhost:7275/api/v1/users');
+        return axios.get('https://innovamind.herokuapp.com/api/v1/users');
     }
 
     GetAll() {
@@ -48,20 +46,20 @@ export class DriversServices {
     }
 
     GetMessages(id, userid) {
-        return axios.get(`https://localhost:7275/api/v1/${userid}/message/${id}`);
+        return axios.get(`https://innovamind.herokuapp.com/api/v1/${userid}/message/${id}`);
     }
 
     GetContacts(userid) {
-        return axios.get(`https://localhost:7275/api/v1/${userid}/message/drivers`);
+        return axios.get(`https://innovamind.herokuapp.com/api/v1/${userid}/message/drivers`);
     }
 
     SendMessage(answer, id, userid) {
-        return axios.post(`https://localhost:7275/api/v1/${userid}/message/${id}`, answer)
+        return axios.post(`https://innovamind.herokuapp.com/api/v1/${userid}/message/${id}`, answer)
     }
     //////Notifications Section /////////
 
     GetNotificationsByUserId(UserId) {
-        return axios.get(`https://localhost:7275/api/v1/${UserId}/notification`,{
+        return axios.get(`https://innovamind.herokuapp.com/api/v1/${UserId}/notification`,{
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -75,7 +73,7 @@ export class DriversServices {
         });
     }
     DeleteNotificationById(UserId, id) {
-        return axios.delete(`https://localhost:7275/api/v1/${UserId}/notification/${id}`,
+        return axios.delete(`https://innovamind.herokuapp.com/api/v1/${UserId}/notification/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
