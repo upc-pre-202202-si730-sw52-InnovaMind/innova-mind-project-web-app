@@ -30,7 +30,6 @@ import Password from "primevue/password";
 import ScrollPanel from 'primevue/scrollpanel';
 import Avatar from 'primevue/avatar';
 import Badge from 'primevue/badge';
-
 const app = createApp(App);
 app.use(router);
 

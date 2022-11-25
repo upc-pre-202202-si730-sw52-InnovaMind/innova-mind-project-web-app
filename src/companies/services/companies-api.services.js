@@ -1,14 +1,7 @@
 import axios from "axios";
 export class CompaniesServices {
-    UsersURL= "https://localhost:7275/api/v1/users";
-    BaseURL = "http://localhost:3000/companies";
-    NewsURL = "http://localhost:3000/company-news";
-    ContactsURL = "http://localhost:3000/contacts";
-    //MessagesURL = "http://localhost:3000/messages";
-    MessagesURL = "https://localhost:7275/api/v1/2/message/1";
-
-    userEmail= "http://localhost:3000/users?email=";
-    NotificationsURL = 'http://localhost:3000/notifications-companies';
+    UsersURL= "https://innovamind.herokuapp.com/api/v1/users";
+    MessagesURL = "https://innovamind.herokuapp.com/api/v1/2/message/1";
 
     GetAllUsers(){
         return axios.get(this.UsersURL,{
@@ -25,16 +18,27 @@ export class CompaniesServices {
             }
         });
     }
+    ModifyCompany(id, company) {
+        return axios.put(`${this.UsersURL}/${id}`, company, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+    }
 
-    NotificationsURL = 'https://localhost:7275/api/v1/2/notification/1';
+    NotificationsURL = 'https://innovamind.herokuapp.com/api/v1/2/notification/1';
     GetAll() {
-        return axios.get(this.BaseURL);
+        return axios.get(this.UsersURL);
     }
     GetCompanyById(id) {
-        return axios.get(`${this.BaseURL}/${id}`);
+        return axios.get(`${this.UsersURL}/${id}`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
     }
     AddCompany(company) {
-        return axios.post(this.BaseURL, company);
+        return axios.post(this.UsersURL, company);
     }
     AddUser(user) {
         return axios.post(this.UsersURL, user);
@@ -45,27 +49,25 @@ export class CompaniesServices {
     GetUserByEmail (email) {
         return axios.get(this.userEmail+`${email}`);
     }
-    ModifyCompany(id, company) {
-        return axios.put(`${this.BaseURL}/${id}`, company);
-    }
+    
     Delete(id) {
-        return axios.delete(`${this.BaseURL}/${id}`);
+        return axios.delete(`${this.UsersURL}/${id}`);
     }
     GetCompaniesNews() {
         return axios.get(this.NewsURL);
     }
     Getcompanie(id) {
-        return axios.get(`${this.BaseURL}/${id}`);
+        return axios.get(`${this.UsersURL}/${id}`);
     }
 
     //////Messages Section /////////
 
     GetContacts(userid) {
-        return axios.get(`https://localhost:7275/api/v1/${userid}/message/recruiters`);
+        return axios.get(`https://innovamind.herokuapp.com/api/v1/${userid}/message/recruiters`);
     }
 
     GetMessages(userid, id) {
-        return axios.get(`https://localhost:7275/api/v1/${userid}/message/${id}`);
+        return axios.get(`https://innovamind.herokuapp.com/api/v1/${userid}/message/${id}`);
     }
 
     SendMessage(answer) {
@@ -75,7 +77,7 @@ export class CompaniesServices {
     //////Notifications Section /////////
 
     GetNotificationsByUserId(UserId) {
-        return axios.get(`https://localhost:7275/api/v1/${UserId}/notification`,{
+        return axios.get(`https://innovamind.herokuapp.com/api/v1/${UserId}/notification`,{
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -89,7 +91,7 @@ export class CompaniesServices {
         });
     }
     DeleteNotificationById(UserId,id) {
-        return axios.delete(`https://localhost:7275/api/v1/${UserId}/notification/${id}`,
+        return axios.delete(`https://innovamind.herokuapp.com/api/v1/${UserId}/notification/${id}`,
             {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`

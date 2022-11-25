@@ -9,19 +9,19 @@
           <img src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg" alt="Photo" style="display: inline-grid; padding: 0.5rem">
 
           <div class="field" style="display: inline-grid">
-            <label>Full Name</label>
+            <label>First Name</label>
             <br/>
-            <pv-input-text  type="text" v-model="recruiter.first_name"/>
+            <pv-input-text  type="text" v-model="recruiter.firstName"/>
           </div>
           <div class="field" style="display: inline-grid">
-            <label>RUC</label>
+            <label>Last Name</label>
             <br/>
-            <pv-input-text  type="text" v-model="recruiter.ruc"/>
+            <pv-input-text  type="text" v-model="recruiter.lastName"/>
           </div>
           <div class="field" style="display: inline-grid">
             <label>Email</label>
             <br/>
-            <pv-input-text  type="text" v-model="recruiter.email"/>
+            <pv-input-text  type="text" v-model="recruiter.userName"/>
           </div>
 
           <div class="field" style="display: inline-grid">
@@ -37,9 +37,9 @@
           </div>
 
           <div class="field" style="display: inline-grid">
-            <label>Location</label>
+            <label>Description</label>
             <br/>
-            <pv-input-text  type="text" v-model="recruiter.city"/>
+            <pv-input-text  type="text" v-model="recruiter.description"/>
           </div>
         </div>
       </template>
@@ -63,7 +63,16 @@ export default {
   name: "company_settings",
   data() {
     return {
-      recruiter: {},
+      recruiter: {
+      "fistName": "",
+      "lastName": "",
+      "userName": "",
+      "password": "",
+      "phone": "",
+      "role": "",
+      "description": "",
+      "imageUrl": ""
+      },
     };
   },
   created() {

@@ -6,22 +6,22 @@
       <template #content style="width: 100vw">
         <div class="grid">
 
-          <img src="https://i.pinimg.com/736x/94/bd/98/94bd986bd47b84a0c4071e1aff4dd23f.jpg" alt="Photo" style="display: inline-grid; padding: 0.5rem">
+          <img :src=driver.imageUrl alt="Photo" style="display: inline-grid; padding: 0.5rem">
 
           <div class="field" style="display: inline-grid">
-            <label>Full Name</label>
+            <label>First Name</label>
             <br/>
-            <pv-input-text  type="text" v-model="driver.first_name"/>
+            <pv-input-text  type="text" v-model="driver.firstName"/>
           </div>
           <div class="field" style="display: inline-grid">
-            <label>License</label>
+            <label>Last Name</label>
             <br/>
-            <pv-input-text  type="text" v-model="driver.license"/>
+            <pv-input-text  type="text" v-model="driver.lastName"/>
           </div>
           <div class="field" style="display: inline-grid">
             <label>Email</label>
             <br/>
-            <pv-input-text  type="text" v-model="driver.email"/>
+            <pv-input-text  type="text" v-model="driver.userName"/>
           </div>
 
           <div class="field" style="display: inline-grid">
@@ -37,9 +37,9 @@
           </div>
 
           <div class="field" style="display: inline-grid">
-            <label>Location</label>
+            <label>Description</label>
             <br/>
-            <pv-input-text  type="text" v-model="driver.country"/>
+            <pv-input-text  type="text" v-model="driver.description"/>
           </div>
         </div>
       </template>
@@ -63,14 +63,23 @@ export default {
   name: "driver-settings.vue",
   data() {
     return {
-      driver: {},
+      driver: {
+      "firstName": "",
+      "lastName": "",
+      "userName": "",
+      "password": "",
+      "phone": "",
+      "role": "",
+      "description": "",
+      "imageUrl": ""
+      }
     };
   },
   created() {
     this.service = new DriversServices();
-    this.service.GetDriverById(localStorage.getItem("id")).then((response) => {
-      this.driver= response.data;
-      console.log(response.data);
+    this.service.GetUserById(localStorage.getItem("id")).then((response) => {
+      this.driver = response.data;
+      console.log(this.driver);
     });
   },
   methods: {
@@ -80,8 +89,8 @@ export default {
       });
     },
     restart() {
-      this.service.GetDriverById(this.driver.id).then((response) => {
-        this.driver= response.data;
+      this.service.GetUserById(this.driver.id).then((response) => {
+        this.driver = response.data;
         console.log("Restarting!");
       });
     },

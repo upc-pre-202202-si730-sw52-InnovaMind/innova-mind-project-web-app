@@ -16,7 +16,8 @@
             <p class="text-black">{{notification.content}}</p>
           </template>
           <template #footer>
-            <pv-button onClick="DeleteNotificationById(notification.id)" icon="pi pi-times" label="Delete" class="p-button-secondary" style="margin-left: 0.2em"/>
+            <pv-button icon="pi pi-check" label="View" class="p-button-primary" />
+            <pv-button icon="pi pi-times" label="Delete" class="p-button-secondary" style="margin-left: 0.2em"/>
           </template>
         </pv-card>
       </div>
@@ -58,8 +59,7 @@ export default {
       });
     },
     DeleteNotification(id) {
-      this.service.DeleteNotification(localStorage.getItem("id"), id).then((response) => {
-        //this.notifications = this.notifications.filter((notification) => notification.id !== id);
+      this.service.DeleteNotificationById(localStorage.getItem("id"), id).then((response) => {
         this.notifications.delete(id);
       });
     },

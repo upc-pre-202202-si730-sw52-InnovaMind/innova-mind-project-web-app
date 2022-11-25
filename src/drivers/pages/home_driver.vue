@@ -36,7 +36,12 @@
 <script lang="js">
 import { DriversServices } from "../services/drivers-api.services";
 
+
 export default {
+
+  components: {
+
+  },
     data() {
       return {
           news: [],
