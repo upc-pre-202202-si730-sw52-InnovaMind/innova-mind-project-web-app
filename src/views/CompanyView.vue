@@ -8,10 +8,10 @@
 
         <div class="left-bar">
             <div class="profile-bar">
-                <h5>Henry Turrones</h5>
+                <h5>{{user.firstName + " "+ user.lastName }}</h5>
                 <div class="profile-image">
                     <img
-                        src="https://raw.githubusercontent.com/upc-pre-202202-si730-sw52-InnovaMind/innova-mind-project-web-app/main/src/assets/images/HenryTurrones.jpg"
+                        :src="user.imageUrl"
                         alt="Recruiter's profile photo"
                     />
                 </div>
@@ -20,18 +20,29 @@
     </div>
 </template>
 
-<script lang="ts">
+<script lang="js">
 import "primeicons/primeicons.css";
 import Sidebar from "../companies/components/Sidebar.vue";
+import { CompaniesServices} from "@/companies/services/companies-api.services";
 
 export default {
     components: {
         Sidebar,
+        CompaniesServices
     },
     data() {
-        return {};
+        return {
+          service: null,
+          user: {},
+        };
     },
-    created() {},
+    created() {
+      this.service = new CompaniesServices();
+      this.service.GetUserById(localStorage.getItem('id')).then((response) => {
+        this.user = response.data;
+      });
+
+    },
     methods: {},
 };
 </script>

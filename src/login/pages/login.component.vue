@@ -130,10 +130,10 @@ export default {
 
       await this.service.getUser(UserRequest).then(response=> {
         this.account = response.data;
-        console.log(response.data);
         localStorage.setItem('id', this.account.id);
         localStorage.setItem('role', this.account.role);
         localStorage.setItem('token', response.data.token);
+
         if(this.account.role === 'driver') {
           this.$router.push("/driver/home");
         }
